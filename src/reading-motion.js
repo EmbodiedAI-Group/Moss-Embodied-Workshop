@@ -36,10 +36,11 @@ export function readingMotion(context, { returning, navigationEntry }) {
   if (!navigationEntry) revealBatch('.visual figure, .speaker-copy', context, returning, { distance: 16 });
 
   // Each reading section arrives as a heading and its adjacent blocks, not word by word.
-  const readingGroups = [...document.querySelectorAll('.article > section')].map(section => ({
+  const readingGroups = [...document.querySelectorAll('.article > section')].filter(section => section.querySelectorAll(':scope > h2').length <= 1).map(section => ({
     trigger: section, targets: [...section.children]
   }));
-  for (const heading of document.querySelectorAll('.content > h2')) {
+  for (const heading of document.querySelectorAll('.content > h2, .article > section > h2')) {
+    if (heading.parentElement.matches('.article > section') && heading.parentElement.querySelectorAll(':scope > h2').length <= 1) continue;
     const targets = [heading];
     let next = heading.nextElementSibling;
     while (next && next.tagName !== 'H2' && !next.classList.contains('tech-tags')) {

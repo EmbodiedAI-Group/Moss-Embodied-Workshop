@@ -1,75 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>王治（Leo Wang）分享：HumanEgo 与 ForceBand · moss具身工坊</title>
-<meta name="description" content="moss具身工坊专家分享：UMD 计算机科学系博士生王治（Leo Wang）介绍 HumanEgo 与 ForceBand，探讨从人类第一视角视频与 sEMG 中高效学习机器人操作。" />
-
-  <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/site.css?v=motion3" />
-<link rel="stylesheet" href="assets/pages.css?v=motion3" />
-<link rel="stylesheet" href="assets/motion.css?v=motion3" />
-<link rel="stylesheet" href="assets/reading-position.css?v=motion3" />
-<link rel="stylesheet" href="assets/navigation.css?v=motion3" />
-<script src="assets/navigation.js?v=motion3"></script>
-<script defer src="assets/motion.js?v=motion3"></script>
-</head>
-<body class="page-talk">
-<header class="site-header"><a class="brand" href="index.html"><span class="brand-word">moss</span><span>具身工坊</span></a><nav aria-label="主导航"><a href="projects.html">共创项目</a><a href="wang-zhi-talk.html">专家分享</a><a class="join-link" href="index.html#join">加入社区 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav><span class="section-context" aria-hidden="true"></span><div class="reading-progress" aria-hidden="true"></div></header>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f6f5"><title>HumanEgo：用几分钟人类第一视角视频，零样本教会机器人操作 · Moss具身工坊</title><link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/site.css?v=content1"><link rel="stylesheet" href="assets/pages.css?v=content1"><link rel="stylesheet" href="assets/motion.css?v=content1"><link rel="stylesheet" href="assets/reading-position.css?v=content1"><link rel="stylesheet" href="assets/navigation.css?v=content1"><script src="assets/navigation.js?v=content1"></script><script defer src="assets/motion.js?v=content1"></script></head>
+<body class="page-talk" data-content-detail="talk" data-content-kind="talk" >
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-word">Moss</span><span>具身工坊</span></a><nav aria-label="主导航"><a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="talk" href="talks.html">专家分享</a><a class="join-link" href="index.html#join">加入社区 ↗</a></nav><span class="section-context" aria-hidden="true"></span><div class="reading-progress" aria-hidden="true"></div></header>
 <main>
-<header class="hero"><div class="container">
-<div class="breadcrumb"><a href="index.html">首页</a><span aria-hidden="true">/</span><a href="index.html#activities">专家论坛</a><span aria-hidden="true">/</span><span>王治学术分享</span></div>
-<div class="hero-grid"><div>
-<h1><span>HumanEgo：</span>用几分钟人类第一视角视频，零样本教会机器人操作</h1>
-<p class="english-title" lang="en">Zero-Shot Robot Learning from Minutes of Human Egocentric Videos</p>
-<div class="awards"><p>IROS 2026 WORLDS Workshop 最佳论文奖</p><p>ScaleInfra Workshop 最佳 Demo 论文奖</p></div>
-<p class="secondary-title">同时分享 <strong>ForceBand</strong><br /><span lang="en">Learning Forceful Manipulation with sEMG</span> · CoRL 2026</p>
-</div><aside class="event-info" aria-label="活动信息">
-<h2>专家学术分享</h2>
-<dl><div><dt>分享嘉宾</dt><dd>王治 · Leo Wang</dd></div><div><dt>活动时间</dt><dd><time datetime="2026-11-07T07:00">2026 年 11 月 7 日（周六）</time>07:00 – 09:00</dd></div><div><dt>主办社区</dt><dd>moss具身工坊</dd></div></dl>
-<a class="button" href="index.html#join">加入社群了解参会方式 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
-<p class="event-note">具体参会方式请关注社群通知。</p>
-</aside></div></div></header>
-<section class="speaker" aria-labelledby="speaker-title"><div class="container speaker-grid">
-<div><h2 id="speaker-title">王治 <span>Leo Wang</span></h2><p class="speaker-role">UMD 计算机科学系博士生<br />Amazon FAR 研究实习生</p></div>
-<div class="speaker-copy"><p>美国马里兰大学帕克分校（UMD）计算机科学系博士生，师从 <strong>Yiannis Aloimonos</strong> 教授；本科毕业于清华大学电子工程系。现为 <strong>Amazon FAR（Frontier AI &amp; Robotics）</strong>研究实习生，与 Guanya Shi、Carlo Sferrazza、Rocky Duan、Pieter Abbeel 等合作。曾在 UIUC、微软亚洲研究院、清华大学交叉信息研究院从事研究。</p>
-<p><strong>研究方向：</strong>从人类数据中高效学习机器人操作，利用人类视频、触觉等多模态信息，让机器人学会精细、通用的操作技能。</p></div>
-</div></section>
-<div class="reading"><div class="container reading-grid">
-<article class="article" aria-label="分享内容">
-<section aria-labelledby="intro-title"><h2 id="intro-title">从人类示范，到机器人技能</h2>
+<header class="hero"><div class="container"><div class="breadcrumb"><a href="index.html">首页</a> / <a href="talks.html">专家分享</a> / 王治 · Leo Wang</div><div class="hero-grid"><div><h1>HumanEgo：用几分钟人类第一视角视频，零样本教会机器人操作</h1><p class="english-title" lang="en">Zero-Shot Robot Learning from Minutes of Human Egocentric Videos</p><div class="awards"><p>IROS 2026 WORLDS Workshop 最佳论文奖</p><p>ScaleInfra Workshop 最佳 Demo 论文奖</p></div><p class="secondary-title">同时分享 ForceBand Learning Forceful Manipulation with sEMG · CoRL 2026</p></div><aside class="event-info"><h2>专家学术分享</h2><dl><div><dt>分享嘉宾</dt><dd>王治 · Leo Wang</dd></div><div><dt>活动时间</dt><dd><time datetime="2026-11-07T08:00:00+08:00">2026-11-07 08:00–09:45</time><br>北京时间（UTC+8）</dd></div><div><dt>主办社区</dt><dd>Moss具身工坊</dd></div></dl><a class="button" href="index.html#join">加入社群了解参会方式 ↗</a></aside></div></div></header>
+<div class="container"><figure class="talk-figure"><img data-transition-image src="assets/media/humanego-teaser.webp" alt="HumanEgo 人类第一视角视频到机器人操作的研究框架与实验" loading="eager"><figcaption>HumanEgo 人类第一视角视频到机器人操作的研究框架与实验 · 图片来源：<a href="https://humanego-ai.github.io/">HumanEgo 项目主页</a></figcaption></figure></div>
+<section class="speaker"><div class="container speaker-grid"><div><h2 id="speaker-title">王治 · Leo Wang</h2><p class="speaker-role">UMD 计算机科学系博士生<br>Amazon FAR 研究实习生<br></p></div><div class="speaker-copy"><p>美国马里兰大学帕克分校（UMD）计算机科学系博士生，师从 <strong>Yiannis Aloimonos</strong> 教授；本科毕业于清华大学电子工程系。现为 <strong>Amazon FAR（Frontier AI &amp; Robotics）</strong>研究实习生，与 Guanya Shi、Carlo Sferrazza、Rocky Duan、Pieter Abbeel 等合作。曾在 UIUC、微软亚洲研究院、清华大学交叉信息研究院从事研究。</p>
+<p><strong>研究方向：</strong>从人类数据中高效学习机器人操作，利用人类视频、触觉等多模态信息，让机器人学会精细、通用的操作技能。</p>
+</div></div></section><div class="reading"><div class="container reading-grid"><article class="article"><section><h2 id="intro-title">从人类示范，到机器人技能</h2>
 <p>数据是机器人学习的核心瓶颈：遥操作采集昂贵、缓慢，而且绑定特定硬件。人类第一视角视频天然包含丰富的操作示范，几乎零成本，随时随地都能采集。但人和机器人在外观与运动学上存在<strong>“本体差异”（embodiment gap）</strong>，技能很难直接迁移。</p>
 <p>本次分享介绍 <strong>HumanEgo</strong>：一个不需要任何机器人数据、与硬件无关、数据高效的机器人学习框架。</p>
 <h3>如何跨越本体差异？</h3>
 <p>戴着 Aria 眼镜录制日常操作视频，把每段示范提升为以<strong>“手–物交互”为中心的实体级表征（Interaction-Centric Tokens）</strong>，用手臂 inpainting 和视觉关键点弥合视觉差异，再用带稠密辅助目标的 <strong>flow matching 策略</strong>，从每条轨迹中提取更多监督信号。</p>
-<div class="result-note"><p>每个任务只用 <strong>30 分钟</strong>人类视频，HumanEgo 在四个真实任务上的平均成功率达到 <strong>92.5%</strong>（15 分钟数据即达 75%），比同等时长的遥操作数据高出 <strong>41%</strong>，并能零样本迁移到新的机器人、相机和环境。</p></div>
-<a class="source-link" href="https://humanego-ai.github.io/" target="_blank" rel="noopener noreferrer">查看 HumanEgo 项目与实验结果 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
-</section>
-<section aria-labelledby="insights-title"><h2 id="insights-title">分享中的几点洞见</h2>
+<p>每个任务只用 <strong>30 分钟</strong>人类视频，HumanEgo 在四个真实任务上的平均成功率达到 <strong>92.5%</strong>（15 分钟数据即达 75%），比同等时长的遥操作数据高出 <strong>41%</strong>，并能零样本迁移到新的机器人、相机和环境。</p>
+<p><a href="https://humanego-ai.github.io/">查看 HumanEgo 项目与实验结果</a></p>
+<h2 id="insights-title">分享中的几点洞见</h2>
 <p><strong>人类视频不只是廉价替代品。</strong>丰富的示范不仅能够降低采集成本，也为策略学习提供了更充分的监督信号。</p>
 <p><strong>显式空间表征比视觉逼真度更关键。</strong>跨越本体差异的关键，在于理解手和物体如何交互。</p>
-</section>
-<section aria-labelledby="forceband-title"><h2 id="forceband-title">ForceBand：从 sEMG 学习用力操作</h2>
-<p lang="en"><strong>ForceBand: Learning Forceful Manipulation with sEMG</strong><br />CoRL 2026</p>
+<h2 id="forceband-title">ForceBand：从 sEMG 学习用力操作</h2>
+<p><strong>ForceBand: Learning Forceful Manipulation with sEMG</strong><br>
+CoRL 2026</p>
 <p>本次分享还将介绍 ForceBand，延伸讨论如何利用表面肌电（sEMG）信息学习机器人操作。</p>
-<a class="source-link" href="https://forceband-emg.github.io/" target="_blank" rel="noopener noreferrer">查看 ForceBand 项目主页 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
-</section>
-</article>
-<aside><section class="agenda" id="agenda" aria-labelledby="agenda-title"><h2 id="agenda-title">分享大纲</h2>
-<ol>
+<p><a href="https://forceband-emg.github.io/">查看 ForceBand 项目主页</a></p>
+</section></article><aside><section class="agenda" id="agenda"><h2 id="agenda-title">分享大纲</h2><ol>
 <li><strong>为什么是人类第一视角视频</strong>机器人数据瓶颈与本体差异</li>
 <li><strong>HumanEgo 方法</strong>数据采集与预处理、交互中心表征、flow matching 策略与稠密辅助目标</li>
 <li><strong>实验结果</strong>数据效率、与遥操作的对比、跨机器人 / 相机 / 环境的零样本泛化</li>
 <li><strong>几点洞见</strong>人类视频的价值，以及显式空间表征如何跨越本体差异</li>
 <li><strong>CoRL 2026 · ForceBand</strong>Learning Forceful Manipulation with sEMG</li>
 <li><strong>Q&amp;A</strong>交流与讨论</li>
-</ol></section>
-<section class="project-links" aria-labelledby="links-title"><h2 id="links-title">相关项目</h2><a href="https://humanego-ai.github.io/" target="_blank" rel="noopener noreferrer">HumanEgo 项目主页 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="https://forceband-emg.github.io/" target="_blank" rel="noopener noreferrer">ForceBand 项目主页 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></section></aside>
-</div></div>
-<section class="closing"><div class="container"><div><h2>一起讨论，机器人如何从人类中学习</h2><p>加入 moss具身工坊，关注本次专家分享与后续交流。</p></div><a class="button" href="index.html#join">查看社群加入方式 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></section>
+</ol>
+</section><section class="project-links" aria-labelledby="links-title"><h2 id="links-title">相关项目</h2><a href="https://humanego-ai.github.io/" target="_blank" rel="noopener noreferrer">HumanEgo 项目主页 ↗</a><a href="https://forceband-emg.github.io/" target="_blank" rel="noopener noreferrer">ForceBand 项目主页 ↗</a></section></aside></div></div>
+
+<section class="join-hero"><div class="container"><div class="join-card"><div class="join-info"><h3>一起参与</h3><p>加入社区，与伙伴交流、分享与共创。</p><a href="index.html#join" class="join-btn">查看社群加入方式 ↗</a></div></div></div></section>
 </main>
-<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-word">moss</span><span>具身工坊</span></a><nav aria-label="页脚导航"><a href="index.html">首页</a><a href="projects.html">共创项目</a><a href="https://github.com/EmbodiedAI-Group/Moss-Embodied-Workshop" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav><p>© 2026 moss具身工坊</p></footer>
-</body>
-</html>
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-word">Moss</span><span>具身工坊</span></a><nav aria-label="页脚导航"><a href="index.html">首页</a><a href="projects.html">共创项目</a><a href="talks.html">专家分享</a><a href="knowledge.html">知识分享</a><a href="updates.html">社区动态</a><a href="https://github.com/EmbodiedAI-Group/Moss-Embodied-Workshop" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav><p>© 2026 Moss具身工坊</p></footer></body></html>

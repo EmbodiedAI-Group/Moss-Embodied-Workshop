@@ -8,12 +8,13 @@ if (header && main) {
   const progress = header.querySelector('.reading-progress');
   const setProgress = gsap.quickSetter(progress, 'scaleX');
   const route = location.pathname.split('/').pop() || 'index.html';
+  const kind = document.body.dataset.contentDetail || document.body.dataset.contentSection;
   const category = route.startsWith('project') ? 'projects.html' : route === 'wang-zhi-talk.html' ? route : null;
   for (const link of header.querySelectorAll('nav a')) {
     const url = new URL(link.href);
-    const current = Boolean(category && !url.hash && url.pathname.endsWith('/' + category));
+    const current = !url.hash && (kind ? link.dataset.navKind === kind : Boolean(category && url.pathname.endsWith('/' + category)));
     link.classList.toggle('is-current', current);
-    if (current) link.setAttribute('aria-current', route === category ? 'page' : 'true');
+    if (current) link.setAttribute('aria-current', url.pathname === location.pathname ? 'page' : 'true');
   }
   let compact = false;
   document.fonts.ready.then(() => {

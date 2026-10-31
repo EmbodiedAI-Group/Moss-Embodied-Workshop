@@ -1,0 +1,8 @@
+---
+layout: base.njk
+title: 知识分享
+bodyClass: page-projects
+sectionKind: knowledge
+permalink: knowledge.html
+---
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">首页</a> / 知识分享</div><h1>知识分享</h1><p>技术文章、实战教程与前沿论文解读。</p></div></section><section class="projects-list"><div class="container"><div class="projects-grid">{% for item in library.knowledge %}<a class="project-card" data-content-link href="{{ item.url }}">{% if item.image %}<div class="card-visual"><img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy"></div>{% endif %}<div class="card-body"><h2 data-transition-title>{{ item.title }}</h2><p>{{ item.summary }}</p><span class="card-cta">查看详情 ↗</span></div></a>{% endfor %}</div></div></section>

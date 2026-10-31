@@ -1,0 +1,213 @@
+media:
+  input: assets/media
+  output: /assets/media
+  categories:
+  - image
+settings:
+  content:
+    merge: true
+content:
+- name: projects
+  label: 项目
+  type: collection
+  path: content/projects
+  format: json
+  filename:
+    template: '{year}-{month}-{day}-{hour}-{minute}-{second}.json'
+    field: false
+  view:
+    primary: title
+  fields:
+  - &id001
+    name: title
+    label: 标题
+    type: string
+    required: true
+  - &id002
+    name: shortTitle
+    label: 首页短标题（选填）
+    type: string
+  - &id003
+    name: summary
+    label: 摘要
+    type: text
+    required: true
+  - &id004
+    name: date
+    label: 发布日期（修改旧内容时填写本次发布日期）
+    type: date
+    default: ''
+    required: true
+  - &id005
+    name: published
+    label: 发布
+    type: boolean
+    default: true
+  - &id006
+    name: image
+    label: 封面图片（选填）
+    type: image
+  - &id007
+    name: imageAlt
+    label: 图片说明
+    type: string
+  - &id008
+    name: body
+    label: 正文
+    type: rich-text
+    required: true
+  - name: homeSummary
+    label: 首页一句话简介
+    type: text
+  - name: tags
+    label: 列表标签
+    type: string
+    list: true
+  - name: detailTags
+    label: 正文标签
+    type: string
+    list: true
+  - name: metrics
+    label: 项目指标
+    type: object
+    list: true
+    fields:
+    - name: value
+      label: 数字与单位
+      type: string
+    - name: label
+      label: 指标说明
+      type: string
+  - name: joinText
+    label: 参与项目说明
+    type: text
+- name: knowledge
+  label: 知识分享
+  type: collection
+  path: content/knowledge
+  format: json
+  filename:
+    template: '{year}-{month}-{day}-{hour}-{minute}-{second}.json'
+    field: false
+  view:
+    primary: title
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  - *id008
+  - name: externalUrl
+    label: 相关外部链接
+    type: string
+- name: talks
+  label: 专家分享
+  type: collection
+  path: content/talks
+  format: json
+  filename:
+    template: '{year}-{month}-{day}-{hour}-{minute}-{second}.json'
+    field: false
+  view:
+    primary: title
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  - *id008
+  - name: speaker
+    label: 分享嘉宾
+    type: string
+    required: true
+  - name: speakerRole
+    label: 嘉宾身份（一行一项）
+    type: text
+  - name: bio
+    label: 嘉宾介绍
+    type: rich-text
+  - name: eventDate
+    label: 分享日期
+    type: date
+    required: true
+  - name: eventStart
+    label: 开始时间（北京时间，如 08:00）
+    type: string
+    required: true
+  - name: eventEnd
+    label: 结束时间（北京时间，如 09:45）
+    type: string
+    required: true
+  - name: englishTitle
+    label: 英文标题
+    type: string
+  - name: secondaryTitle
+    label: 其他分享题目
+    type: text
+  - name: awards
+    label: 奖项（一行一项）
+    type: text
+  - name: agenda
+    label: 分享大纲
+    type: rich-text
+  - name: imageCredit
+    label: 图片来源名称
+    type: string
+  - name: imageCreditUrl
+    label: 图片来源链接
+    type: string
+  - name: sourceLinks
+    label: 相关项目链接
+    type: object
+    list: true
+    fields:
+    - name: label
+      label: 链接名称
+      type: string
+      required: true
+    - name: url
+      label: 链接地址
+      type: string
+      required: true
+- name: updates
+  label: 社区动态
+  type: collection
+  path: content/updates
+  format: json
+  filename:
+    template: '{year}-{month}-{day}-{hour}-{minute}-{second}.json'
+    field: false
+  view:
+    primary: title
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  - *id008
+  - name: relatedUrl
+    label: 相关页面链接（选填）
+    type: string
+- name: site
+  label: 社区二维码设置
+  type: file
+  path: content/site.json
+  format: json
+  fields:
+  - name: qrImage
+    label: 微信群二维码
+    type: image
+    required: true
+  - name: qrExpiry
+    label: 有效期提示
+    type: string
+    required: true

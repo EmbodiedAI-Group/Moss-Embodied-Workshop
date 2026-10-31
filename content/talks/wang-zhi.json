@@ -1,0 +1,35 @@
+{
+  "title": "HumanEgo：用几分钟人类第一视角视频，零样本教会机器人操作",
+  "shortTitle": "HumanEgo × ForceBand",
+  "summary": "用几分钟人类第一视角视频，零样本教会机器人操作。从人类视频与表面肌电（sEMG）出发，讨论机器人学习的数据瓶颈与本体差异。",
+  "date": "",
+  "published": true,
+  "legacyUrl": "wang-zhi-talk.html",
+  "legacyOrder": 1,
+  "speaker": "王治 · Leo Wang",
+  "speakerRole": "UMD 计算机科学系博士生\nAmazon FAR 研究实习生",
+  "eventDate": "2026-11-07",
+  "eventStart": "08:00",
+  "eventEnd": "09:45",
+  "timeZone": "北京时间（UTC+8）",
+  "englishTitle": "Zero-Shot Robot Learning from Minutes of Human Egocentric Videos",
+  "awards": "IROS 2026 WORLDS Workshop 最佳论文奖\nScaleInfra Workshop 最佳 Demo 论文奖",
+  "secondaryTitle": "同时分享 ForceBand Learning Forceful Manipulation with sEMG · CoRL 2026",
+  "bio": "美国马里兰大学帕克分校（UMD）计算机科学系博士生，师从 **Yiannis Aloimonos** 教授；本科毕业于清华大学电子工程系。现为 **Amazon FAR（Frontier AI & Robotics）**研究实习生，与 Guanya Shi、Carlo Sferrazza、Rocky Duan、Pieter Abbeel 等合作。曾在 UIUC、微软亚洲研究院、清华大学交叉信息研究院从事研究。\n\n**研究方向：**从人类数据中高效学习机器人操作，利用人类视频、触觉等多模态信息，让机器人学会精细、通用的操作技能。",
+  "body": "## 从人类示范，到机器人技能\n\n数据是机器人学习的核心瓶颈：遥操作采集昂贵、缓慢，而且绑定特定硬件。人类第一视角视频天然包含丰富的操作示范，几乎零成本，随时随地都能采集。但人和机器人在外观与运动学上存在**“本体差异”（embodiment gap）**，技能很难直接迁移。\n\n本次分享介绍 **HumanEgo**：一个不需要任何机器人数据、与硬件无关、数据高效的机器人学习框架。\n\n### 如何跨越本体差异？\n\n戴着 Aria 眼镜录制日常操作视频，把每段示范提升为以**“手–物交互”为中心的实体级表征（Interaction-Centric Tokens）**，用手臂 inpainting 和视觉关键点弥合视觉差异，再用带稠密辅助目标的 **flow matching 策略**，从每条轨迹中提取更多监督信号。\n\n每个任务只用 **30 分钟**人类视频，HumanEgo 在四个真实任务上的平均成功率达到 **92.5%**（15 分钟数据即达 75%），比同等时长的遥操作数据高出 **41%**，并能零样本迁移到新的机器人、相机和环境。\n\n[查看 HumanEgo 项目与实验结果](https://humanego-ai.github.io/)\n\n## 分享中的几点洞见\n\n**人类视频不只是廉价替代品。**丰富的示范不仅能够降低采集成本，也为策略学习提供了更充分的监督信号。\n\n**显式空间表征比视觉逼真度更关键。**跨越本体差异的关键，在于理解手和物体如何交互。\n\n## ForceBand：从 sEMG 学习用力操作\n\n**ForceBand: Learning Forceful Manipulation with sEMG**  \nCoRL 2026\n\n本次分享还将介绍 ForceBand，延伸讨论如何利用表面肌电（sEMG）信息学习机器人操作。\n\n[查看 ForceBand 项目主页](https://forceband-emg.github.io/)",
+  "agenda": "1. **为什么是人类第一视角视频**机器人数据瓶颈与本体差异\n2. **HumanEgo 方法**数据采集与预处理、交互中心表征、flow matching 策略与稠密辅助目标\n3. **实验结果**数据效率、与遥操作的对比、跨机器人 / 相机 / 环境的零样本泛化\n4. **几点洞见**人类视频的价值，以及显式空间表征如何跨越本体差异\n5. **CoRL 2026 · ForceBand**Learning Forceful Manipulation with sEMG\n6. **Q&A**交流与讨论",
+  "image": "assets/media/humanego-teaser.webp",
+  "imageAlt": "HumanEgo 人类第一视角视频到机器人操作的研究框架与实验",
+  "imageCredit": "HumanEgo 项目主页",
+  "imageCreditUrl": "https://humanego-ai.github.io/",
+  "sourceLinks": [
+    {
+      "label": "HumanEgo 项目主页",
+      "url": "https://humanego-ai.github.io/"
+    },
+    {
+      "label": "ForceBand 项目主页",
+      "url": "https://forceband-emg.github.io/"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+---
+permalink: projects.html
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>极客项目共创 · Moss具身工坊</title>
+
+  <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/site.css?v=content1" />
+<link rel="stylesheet" href="assets/pages.css?v=content1" />
+<link rel="stylesheet" href="assets/motion.css?v=content1" />
+<link rel="stylesheet" href="assets/reading-position.css?v=content1" />
+<link rel="stylesheet" href="assets/navigation.css?v=content1" />
+<script src="assets/navigation.js?v=content1"></script>
+<script defer src="assets/motion.js?v=content1"></script>
+</head>
+<body class="page-projects" data-content-section="project" data-content-kind="project">
+
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-word">Moss</span><span>具身工坊</span></a><nav aria-label="主导航"><a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="talk" href="talks.html">专家分享</a><a class="join-link" href="index.html#join">加入社区 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav><span class="section-context" aria-hidden="true"></span><div class="reading-progress" aria-hidden="true"></div></header>
+<main>
+
+<section class="page-hero">
+<div class="container">
+<div class="breadcrumb"><a href="index.html">首页</a> / 极客项目共创</div>
+<h1>极客项目 <span class="orange">共创</span></h1>
+<p>我们相信最好的学习发生在动手之中。这里汇集社区伙伴正在推进的真实项目——从工厂产线、低成本硬件，到数据众包与移动操作平台。点击任意项目，查看详情、进展与加入方式。</p>
+</div>
+</section>
+
+<section class="projects-list">
+<div class="container">
+<div class="projects-grid">{% for item in library.projects %}<a data-content-link href="{{ item.url }}" class="project-card"><div class="card-visual">{% if item.image %}<img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy">{% endif %}</div><div class="card-body"><h2 data-transition-title>{{ item.title }}</h2><p>{{ item.summary }}</p><div class="card-tags">{% for tag in item.tags %}<span>{{ tag }}</span>{% endfor %}</div><span class="card-cta">查看详情 ↗</span></div></a>{% endfor %}</div>
+</div>
+</section>
+
+<section class="collab-section">
+<div class="container">
+<div class="collab-wrap">
+
+<h2>合作 <span class="orange">形式</span></h2>
+<p class="collab-lead">
+    所有成员都是<strong>兼职参与</strong>，核心原则是<strong>自驱为主</strong>：
+    大家共同研讨技术方案与实现路径，形成共识后再动手；
+    每个人根据自己的时间和兴趣设计阶段性目标，按自己的节奏推进。
+</p>
+
+<div class="collab-steps">
+<div class="collab-step">
+
+<h3>共同研讨</h3>
+<p>定期在群里讨论实现方案，<strong>先形成共识，再动手</strong>。不预设角色，谁有想法谁提，谁擅长谁上。</p>
+</div>
+<div class="collab-step">
+
+<h3>自驱推进</h3>
+<p>根据各自的时间和兴趣<strong>认领阶段性目标</strong>，按自己的节奏推进。没有强制的里程碑，也没有打卡式考核。</p>
+</div>
+<div class="collab-step">
+
+<h3>公开同步</h3>
+<p>进展在群里<strong>随时同步</strong>，遇到问题可以随时求助；<strong>随时可以加入或调整方向</strong>，不被绑死在某个角色上。</p>
+</div>
+</div>
+
+<div class="collab-weekly">
+
+<div class="collab-weekly-body">
+<h3>每周例会 · 同步进展、解决卡点</h3>
+<p>
+    为了顺利推进项目，<strong>每周灵活安排一次例会</strong>：同步各自进展、集中讨论卡点和难点，
+    把共识对齐到下一周的行动上。时间按大家的空闲协调，不强制全员出席，会议纪要会同步到群里。
+</p>
+</div>
+</div>
+
+<div class="collab-note">
+
+<strong>为什么这么做？</strong>
+项目参与者大多有本职工作和生活节奏，集中式的排期和强考核反而不适合。
+把节奏交还给每个人，让兴趣驱动投入——这样的合作更可持续，也更容易在真实场景里做出成果。
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>有想法？<span class="orange">一起做出来</span></h2>
+<p>极客项目共创欢迎任何愿意动手的伙伴。无论你擅长机械、电子、算法、结构，还是只是有一堆想法想找地方实现，这里都欢迎你。</p>
+<div class="cta-buttons">
+<a href="index.html#join" class="btn-primary"> 加入社群</a>
+<a href="index.html#activities" class="btn-secondary"> 了解社区活动</a>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-word">Moss</span><span>具身工坊</span></a><nav aria-label="页脚导航"><a href="index.html">首页</a><a data-nav-kind="project" href="projects.html">共创项目</a><a href="https://github.com/EmbodiedAI-Group/Moss-Embodied-Workshop" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav><p>© 2026 Moss具身工坊</p></footer>
+
+</body>
+</html>

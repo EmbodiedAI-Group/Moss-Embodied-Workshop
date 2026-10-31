@@ -1,0 +1,65 @@
+---
+permalink: index.html
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Moss具身工坊，连接具身智能研究者、开发者与爱好者。开放知识、专家分享、项目共创，把想法带进真实世界。" />
+  <meta name="theme-color" content="#f6f6f5" />
+  <title>Moss具身工坊 · 把想法，带进真实世界</title>
+    <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/site.css?v=content1" />
+  <link rel="stylesheet" href="assets/motion.css?v=content1" />
+<link rel="stylesheet" href="assets/reading-position.css?v=content1" />
+<link rel="stylesheet" href="assets/navigation.css?v=content1" />
+  <script src="assets/navigation.js?v=content1"></script>
+<script defer src="assets/motion.js?v=content1"></script>
+</head>
+<body class="page-home" data-content-section="home">
+<a class="skip-link" href="#main">跳至内容</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Moss具身工坊首页"><span class="brand-word">Moss</span><span>具身工坊</span></a>
+  <nav aria-label="主导航">
+    <a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="talk" href="talks.html">专家分享</a>
+    <span id="join-magnet"><a class="join-link" href="#join">加入社区 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></span>
+  </nav>
+<span class="section-context" aria-hidden="true"></span><div class="reading-progress" aria-hidden="true"></div></header>
+<main id="main">
+  <section class="home-opening" aria-labelledby="home-title">
+    <aside class="contents-rail" aria-label="社区内容索引">
+      <p class="rail-intro">真实世界，<br />从想法开始。</p>
+      <a href="#knowledge">知识共享 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
+      <a data-nav-kind="talk" href="talks.html">专家分享 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
+      <a href="projects.html">项目共创 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
+      <p class="rail-description">一个面向实践的<br />具身智能社区，<br />连接研究、硬件与真实应用。</p>
+      <p class="rail-english" lang="en">EMBODIED AI<br />FOR A MORE CAPABLE<br />REAL WORLD.</p>
+    </aside>
+    <div class="opening-scene">
+      <div class="hero-masthead" aria-hidden="true">Moss</div>
+      <div class="hero-photo-frame"><img class="hero-photo" src="assets/media/hero-photo.webp" width="1458" height="1713" alt="社区双臂项目：工作台上的橙色开源机械臂" fetchpriority="high" /></div>
+      <h1 id="home-title" class="hero-mission"><span>把想法，</span><span>带进真实世界。</span></h1>
+      <div class="hero-note"><p>从桌面原型<br />到真实世界的<br />具身智能。</p><p>在这里，<br />想法不停留<br />在论文里。</p><span lang="en">IDEAS<br />TO REAL WORLD</span></div>
+    </div>
+  </section>
+  {% set talk = library.talks[0] %}{% if talk %}<a data-content-link class="event-strip" href="{{ talk.url }}"><strong>最新分享</strong><span>{{ talk.speaker }}</span><span data-transition-title class="event-research">{{ talk.shortTitle or talk.title }}</span><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }} · {{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time><span class="event-action">查看详情 ↗</span></a>{% endif %}
+  <section class="home-projects section-shell" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading"><h2 id="projects-title">一起，把项目做出来</h2><span class="heading-rule" aria-hidden="true"></span><p>从想法、原型到真实场景，<br />在社区中获得讨论、协作与支持。</p><a href="projects.html" aria-label="浏览全部共创项目"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a></div>
+    <div class="project-gallery">{% for item in library.projects | limit(4) %}<a data-content-link href="{{ item.url }}" class="gallery-item"><div class="gallery-image">{% if item.image %}<img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy">{% endif %}</div><h3 data-transition-title>{{ item.shortTitle or item.title }} →</h3><p>{{ item.homeSummary or item.summary }}</p></a>{% endfor %}</div>
+  </section>
+  <section class="research-feature section-shell" id="activities" aria-labelledby="research-title">
+    <div class="research-heading"><h2 id="research-title">和做研究的人，<br />聊真正的问题。</h2><p>专家论坛<br />前沿论文、研究方法与真实实验，<br />在这里展开讨论。</p></div>
+    {% if talk %}<div class="research-content"><div class="research-author"><h3>{{ talk.speaker }}</h3><p>{% for line in talk.speakerRole | lines %}{{ line }}<br>{% endfor %}</p><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }}<br>{{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time></div><div class="research-summary"><h3 data-transition-title>{{ talk.shortTitle or talk.title }}</h3><p>{{ talk.summary }}</p>{% if talk.awards %}<p class="research-award">{% for award in talk.awards | lines %}{{ award }}<br>{% endfor %}</p>{% endif %}<a data-content-link class="text-action" href="{{ talk.url }}"><span data-transition-title>查看分享与完整大纲</span> ↗</a></div></div>{% endif %}
+  </section>
+  <section class="knowledge-section section-shell" id="knowledge" aria-labelledby="knowledge-title">
+    <div class="section-heading"><h2 id="knowledge-title">知识，在交流中生长</h2><span class="heading-rule" aria-hidden="true"></span><p>技术文章、实战教程与前沿论文解读。<br />让每一次讨论，都成为下一次实践的起点。</p></div>
+    <div class="knowledge-rows">{% for item in library.knowledge | limit(3) %}<a data-content-link href="{{ item.url }}"><h3 data-transition-title>{{ item.title }}</h3><p>{{ item.summary }}</p><span>查看详情 ↗</span></a>{% endfor %}</div><a class="text-action" href="knowledge.html">查看全部知识分享 ↗</a>
+  </section>
+  <section class="community-updates section-shell" id="updates" aria-labelledby="updates-title"><div class="updates-main"><h2 id="updates-title">社区正在发生</h2>{% for item in library.updates | limit(3) %}<a data-content-link class="update-row" href="{{ item.url }}"><time datetime="{{ item.date }}">{{ item.date | safeDate }}</time><div><h3 data-transition-title>{{ item.title }}</h3><p>{{ item.summary }}</p></div><span>↗</span></a>{% endfor %}<a class="text-action" href="updates.html">查看全部动态 ↗</a></div><aside class="discussion-topics"><h3>我们在讨论什么</h3><ul><li>模仿学习、强化学习、VLA、世界模型与 RSI，哪条路线更可能走向未来？</li><li>大模型厂商下场具身智能，具身大脑公司如何应对？</li><li>仿真、真机、Ego、UMI 数据，如何使用更高效？</li><li>PI 的 API 实操与 demo 分享。</li><li>具身智能落地的难点，以及可行的解决方式。</li></ul></aside></section>
+  <section class="community-join" id="join" aria-labelledby="join-title"><div id="community-threads" aria-hidden="true"></div><div class="join-copy"><h2 id="join-title">下一件真实的事，<br />一起做。</h2><p>和具身智能开发者、研究者与爱好者一起，<br />交流技术、分享资源、组队共创。</p></div><div class="join-contact"><h3>加入 Moss具身工坊</h3><p>微信扫码加入社区，与伙伴交流共创。</p><figure class="join-qr"><img src="{{ library.site.qrImage }}" alt="Moss具身工坊微信群二维码" width="360" height="544"><figcaption>{{ library.site.qrExpiry }}</figcaption></figure><a href="https://github.com/EmbodiedAI-Group/Moss-Embodied-Workshop" target="_blank" rel="noopener noreferrer">在 GitHub 关注社区 ↗</a></div></section>
+</main>
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-word">Moss</span><span>具身工坊</span></a><p>开放知识 · 共同创造 · 真实世界</p><nav aria-label="页脚导航"><a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="talk" href="talks.html">专家分享</a><a href="#join">加入社区</a></nav><small>© 2026 Moss具身工坊</small></footer>
+</body>
+</html>

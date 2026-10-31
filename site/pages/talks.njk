@@ -1,0 +1,9 @@
+---
+layout: base.njk
+title: 专家分享
+bodyClass: page-projects
+sectionKind: talk
+permalink: talks.html
+---
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">首页</a> / 专家分享</div><h1>专家分享</h1><p>和做研究的人，聊真正的问题。</p></div></section>{% macro talkRows(items) %}<div class="projects-grid">{% for item in items %}<a class="project-card" data-content-link href="{{ item.url }}">{% if item.image %}<div class="card-visual"><img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy"></div>{% endif %}<div class="card-body"><p>{{ item.speaker }}{% if item.eventDate %} · {{ item.eventDate }} {{ item.eventStart }}–{{ item.eventEnd }} 北京时间（UTC+8）{% endif %}</p><h2 data-transition-title>{{ item.title }}</h2><p>{{ item.summary }}</p><span class="card-cta">查看分享 ↗</span></div></a>{% endfor %}</div>{% endmacro %}
+<section class="projects-list"><div class="container"><h2>即将分享</h2>{% if library.talksUpcoming.length %}{{ talkRows(library.talksUpcoming) }}{% else %}<p>暂无即将举办的分享，敬请关注。</p>{% endif %}<h2>往期回顾</h2>{% if library.talksPast.length %}{{ talkRows(library.talksPast) }}{% else %}<p>往期内容将陆续在这里呈现。</p>{% endif %}</div></section>

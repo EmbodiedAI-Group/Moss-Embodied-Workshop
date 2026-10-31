@@ -22,3 +22,6 @@ assets/plates/
 .impeccable/navigation-tests/
 .impeccable/reading-review/
 .impeccable/continuity-performance/
+
+# Generated static site
+_site/

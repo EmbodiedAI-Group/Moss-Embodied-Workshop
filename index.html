@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="moss具身工坊，连接具身智能研究者、开发者与爱好者。开放知识、专家分享、项目共创，把想法带进真实世界。" />
+  <meta name="description" content="Moss具身工坊，连接具身智能研究者、开发者与爱好者。开放知识、专家分享、项目共创，把想法带进真实世界。" />
   <meta name="theme-color" content="#f6f6f5" />
-  <title>moss具身工坊 · 把想法，带进真实世界</title>
+  <title>Moss具身工坊 · 把想法，带进真实世界</title>
     <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/site.css?v=motion3" />
-  <link rel="stylesheet" href="assets/motion.css?v=motion3" />
-<link rel="stylesheet" href="assets/reading-position.css?v=motion3" />
-<link rel="stylesheet" href="assets/navigation.css?v=motion3" />
-  <script src="assets/navigation.js?v=motion3"></script>
-<script defer src="assets/motion.js?v=motion3"></script>
+<link rel="stylesheet" href="assets/site.css?v=content1" />
+  <link rel="stylesheet" href="assets/motion.css?v=content1" />
+<link rel="stylesheet" href="assets/reading-position.css?v=content1" />
+<link rel="stylesheet" href="assets/navigation.css?v=content1" />
+  <script src="assets/navigation.js?v=content1"></script>
+<script defer src="assets/motion.js?v=content1"></script>
 </head>
-<body class="page-home">
+<body class="page-home" data-content-section="home">
 <a class="skip-link" href="#main">跳至内容</a>
 <header class="site-header">
-  <a class="brand" href="index.html" aria-label="moss具身工坊首页"><span class="brand-word">moss</span><span>具身工坊</span></a>
+  <a class="brand" href="index.html" aria-label="Moss具身工坊首页"><span class="brand-word">Moss</span><span>具身工坊</span></a>
   <nav aria-label="主导航">
-    <a href="projects.html">共创项目</a><a href="wang-zhi-talk.html">专家分享</a>
+    <a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="talk" href="talks.html">专家分享</a>
     <span id="join-magnet"><a class="join-link" href="#join">加入社区 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></span>
   </nav>
 <span class="section-context" aria-hidden="true"></span><div class="reading-progress" aria-hidden="true"></div></header>
@@ -29,41 +29,34 @@
     <aside class="contents-rail" aria-label="社区内容索引">
       <p class="rail-intro">真实世界，<br />从想法开始。</p>
       <a href="#knowledge">知识共享 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
-      <a href="wang-zhi-talk.html">专家分享 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
+      <a data-nav-kind="talk" href="talks.html">专家分享 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
       <a href="projects.html">项目共创 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
       <p class="rail-description">一个面向实践的<br />具身智能社区，<br />连接研究、硬件与真实应用。</p>
       <p class="rail-english" lang="en">EMBODIED AI<br />FOR A MORE CAPABLE<br />REAL WORLD.</p>
     </aside>
     <div class="opening-scene">
-      <div class="hero-masthead" aria-hidden="true">moss</div>
+      <div class="hero-masthead" aria-hidden="true">Moss</div>
       <div class="hero-photo-frame"><img class="hero-photo" src="assets/media/hero-photo.webp" width="1458" height="1713" alt="社区双臂项目：工作台上的橙色开源机械臂" fetchpriority="high" /></div>
       <h1 id="home-title" class="hero-mission"><span>把想法，</span><span>带进真实世界。</span></h1>
       <div class="hero-note"><p>从桌面原型<br />到真实世界的<br />具身智能。</p><p>在这里，<br />想法不停留<br />在论文里。</p><span lang="en">IDEAS<br />TO REAL WORLD</span></div>
     </div>
   </section>
-  <a class="event-strip" href="wang-zhi-talk.html">
-    <strong>下一场分享</strong><span>王治 <span lang="en">Leo Wang</span></span><span class="event-research" lang="en">HumanEgo × ForceBand</span><time datetime="2026-11-07T07:00">11.07 · 07:00–09:00</time><span class="event-action">查看详情 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></span>
-  </a>
+  <a data-content-link class="event-strip" href="wang-zhi-talk.html"><strong>最新分享</strong><span>王治 · Leo Wang</span><span data-transition-title class="event-research">HumanEgo × ForceBand</span><time datetime="2026-11-07T08:00:00+08:00">2026-11-07 · 08:00–09:45 北京时间</time><span class="event-action">查看详情 ↗</span></a>
   <section class="home-projects section-shell" id="projects" aria-labelledby="projects-title">
     <div class="section-heading"><h2 id="projects-title">一起，把项目做出来</h2><span class="heading-rule" aria-hidden="true"></span><p>从想法、原型到真实场景，<br />在社区中获得讨论、协作与支持。</p><a href="projects.html" aria-label="浏览全部共创项目"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a></div>
-    <div class="project-gallery">
-      <a href="project-1.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-1.webp" width="1080" height="1269" alt="橙色双臂机械臂桌面装置" loading="lazy" /></div><h3>双臂打包装 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></h3><p>工业场景 · 双臂协同</p></a>
-      <a href="project-2.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-2.webp" width="1408" height="768" alt="Roadster 桌面硬件装置项目图" loading="lazy" /></div><h3>低成本 Roadster <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></h3><p>废旧手机 · 低成本硬件</p></a>
-      <a href="project-3.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-3.webp" width="1280" height="1424" alt="EGO 数据众包项目插画：佩戴采集眼镜的人物" loading="lazy" /></div><h3>EGO 数据众包 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></h3><p>第一视角数据 · 共同采集</p></a>
-      <a href="project-4.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-4.webp" width="828" height="711" alt="Orthrus 双臂移动操作平台项目图" loading="lazy" /></div><h3>Orthrus 移动操作 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></h3><p>双臂协作 · 移动平台</p></a>
-    </div>
+    <div class="project-gallery"><a data-content-link href="project-1.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-1.webp" alt="双臂打包装示意图" loading="lazy"></div><h3 data-transition-title>双臂打包装 →</h3><p>工业场景 · 双臂协同</p></a><a data-content-link href="project-2.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-2.webp" alt="Roadster 悬停翻滚示意图" loading="lazy"></div><h3 data-transition-title>低成本 Roadster →</h3><p>废旧手机 · 低成本硬件</p></a><a data-content-link href="project-3.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-3.webp" alt="EGO 数据众包示意图" loading="lazy"></div><h3 data-transition-title>EGO 数据众包 →</h3><p>第一视角数据 · 共同采集</p></a><a data-content-link href="project-4.html" class="gallery-item"><div class="gallery-image"><img src="assets/media/project-photo-4.webp" alt="Orthrus 双臂机器狗示意图" loading="lazy"></div><h3 data-transition-title>Orthrus 移动操作 →</h3><p>双臂协作 · 移动平台</p></a></div>
   </section>
   <section class="research-feature section-shell" id="activities" aria-labelledby="research-title">
     <div class="research-heading"><h2 id="research-title">和做研究的人，<br />聊真正的问题。</h2><p>专家论坛<br />前沿论文、研究方法与真实实验，<br />在这里展开讨论。</p></div>
-    <div class="research-content"><div class="research-author"><h3>王治 <span lang="en">Leo Wang</span></h3><p>UMD 计算机科学系博士生<br />Amazon FAR 研究实习生</p><time datetime="2026-11-07T07:00">2026.11.07（周六）<br />07:00–09:00</time></div><div class="research-summary"><h3 lang="en">HumanEgo<br /><span>× ForceBand</span></h3><p>用几分钟人类第一视角视频，零样本教会机器人操作。从人类视频与表面肌电（sEMG）出发，讨论机器人学习的数据瓶颈与本体差异。</p><p class="research-award">IROS 2026 WORLDS Workshop 最佳论文奖<br />ScaleInfra Workshop 最佳 Demo 论文奖</p><a class="text-action" href="wang-zhi-talk.html">查看分享与完整大纲 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></div></div>
+    <div class="research-content"><div class="research-author"><h3>王治 · Leo Wang</h3><p>UMD 计算机科学系博士生<br>Amazon FAR 研究实习生<br></p><time datetime="2026-11-07T08:00:00+08:00">2026-11-07<br>08:00–09:45 北京时间</time></div><div class="research-summary"><h3 data-transition-title>HumanEgo × ForceBand</h3><p>用几分钟人类第一视角视频，零样本教会机器人操作。从人类视频与表面肌电（sEMG）出发，讨论机器人学习的数据瓶颈与本体差异。</p><p class="research-award">IROS 2026 WORLDS Workshop 最佳论文奖<br>ScaleInfra Workshop 最佳 Demo 论文奖<br></p><a data-content-link class="text-action" href="wang-zhi-talk.html"><span data-transition-title>查看分享与完整大纲</span> ↗</a></div></div>
   </section>
   <section class="knowledge-section section-shell" id="knowledge" aria-labelledby="knowledge-title">
     <div class="section-heading"><h2 id="knowledge-title">知识，在交流中生长</h2><span class="heading-rule" aria-hidden="true"></span><p>技术文章、实战教程与前沿论文解读。<br />让每一次讨论，都成为下一次实践的起点。</p></div>
-    <div class="knowledge-rows"><a href="https://humanego-ai.github.io/" target="_blank" rel="noopener noreferrer"><h3>HumanEgo</h3><p>从人类第一视角视频学习机器人操作</p><span>项目与论文</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a><a href="https://forceband-emg.github.io/" target="_blank" rel="noopener noreferrer"><h3>ForceBand</h3><p>用表面肌电信号学习用力操作</p><span>项目与论文</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a><a href="project-3.html"><h3>EGO 数据众包</h3><p>让社区伙伴在日常中采集第一视角数据</p><span>参与项目</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></div>
+    <div class="knowledge-rows"><a data-content-link href="knowledge-knowledge-1.html"><h3 data-transition-title>HumanEgo</h3><p>从人类第一视角视频学习机器人操作</p><span>查看详情 ↗</span></a><a data-content-link href="knowledge-knowledge-2.html"><h3 data-transition-title>ForceBand</h3><p>用表面肌电信号学习用力操作</p><span>查看详情 ↗</span></a><a data-content-link href="knowledge-knowledge-3.html"><h3 data-transition-title>EGO 数据众包</h3><p>让社区伙伴在日常中采集第一视角数据</p><span>查看详情 ↗</span></a></div><a class="text-action" href="knowledge.html">查看全部知识分享 ↗</a>
   </section>
-  <section class="community-updates section-shell" id="updates" aria-labelledby="updates-title"><div class="updates-main"><h2 id="updates-title">社区正在发生</h2><a class="update-row" href="wang-zhi-talk.html"><time datetime="2026-11-07">2026.11.07</time><div><h3>王治学术分享：HumanEgo 与 ForceBand</h3><p>从人类数据中高效学习机器人操作。</p></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a><article class="update-row"><time datetime="2026-10-31">2026.10.31</time><div><h3>双目具身智能数据采集眼镜与数据平台发布</h3><p>便携、无感地采集数据，探索转化为机器人训练数据集。</p></div></article><article class="update-row"><time datetime="2026-10-01">2026.10.01</time><div><h3>moss具身工坊正式成立上线</h3><p>汇聚伙伴、知识分享和项目共创，从这一天开始生长。</p></div></article></div><aside class="discussion-topics"><h3>我们在讨论什么</h3><ul><li>模仿学习、强化学习、VLA、世界模型与 RSI，哪条路线更可能走向未来？</li><li>大模型厂商下场具身智能，具身大脑公司如何应对？</li><li>仿真、真机、Ego、UMI 数据，如何使用更高效？</li><li>PI 的 API 实操与 demo 分享。</li><li>具身智能落地的难点，以及可行的解决方式。</li></ul></aside></section>
-  <section class="community-join" id="join" aria-labelledby="join-title"><div id="community-threads" aria-hidden="true"></div><div class="join-copy"><h2 id="join-title">下一件真实的事，<br />一起做。</h2><p>和具身智能开发者、研究者与爱好者一起，<br />交流技术、分享资源、组队共创。</p></div><div class="join-contact"><h3>加入 moss具身工坊</h3><p>添加社区小助手微信，了解入群方式。</p><code tabindex="0" aria-label="社区小助手微信号 wall-e-helper">wall-e-helper</code><p class="contact-note">群二维码更新中，暂通过小助手联系。</p><a href="https://github.com/EmbodiedAI-Group/Moss-Embodied-Workshop" target="_blank" rel="noopener noreferrer">在 GitHub 关注社区 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></div></section>
+  <section class="community-updates section-shell" id="updates" aria-labelledby="updates-title"><div class="updates-main"><h2 id="updates-title">社区正在发生</h2><a data-content-link class="update-row" href="update-update-1.html"><time datetime="2026-11-07">2026.11.07</time><div><h3 data-transition-title>王治学术分享：HumanEgo 与 ForceBand</h3><p>从人类数据中高效学习机器人操作。</p></div><span>↗</span></a><a data-content-link class="update-row" href="update-update-2.html"><time datetime="2026-10-31">2026.10.31</time><div><h3 data-transition-title>双目具身智能数据采集眼镜与数据平台发布</h3><p>便携、无感地采集数据，探索转化为机器人训练数据集。</p></div><span>↗</span></a><a data-content-link class="update-row" href="update-update-3.html"><time datetime="2026-10-01">2026.10.01</time><div><h3 data-transition-title>Moss具身工坊正式成立上线</h3><p>汇聚伙伴、知识分享和项目共创，从这一天开始生长。</p></div><span>↗</span></a><a class="text-action" href="updates.html">查看全部动态 ↗</a></div><aside class="discussion-topics"><h3>我们在讨论什么</h3><ul><li>模仿学习、强化学习、VLA、世界模型与 RSI，哪条路线更可能走向未来？</li><li>大模型厂商下场具身智能，具身大脑公司如何应对？</li><li>仿真、真机、Ego、UMI 数据，如何使用更高效？</li><li>PI 的 API 实操与 demo 分享。</li><li>具身智能落地的难点，以及可行的解决方式。</li></ul></aside></section>
+  <section class="community-join" id="join" aria-labelledby="join-title"><div id="community-threads" aria-hidden="true"></div><div class="join-copy"><h2 id="join-title">下一件真实的事，<br />一起做。</h2><p>和具身智能开发者、研究者与爱好者一起，<br />交流技术、分享资源、组队共创。</p></div><div class="join-contact"><h3>加入 Moss具身工坊</h3><p>微信扫码加入社区，与伙伴交流共创。</p><figure class="join-qr"><img src="assets/media/moss-wechat-qr.png" alt="Moss具身工坊微信群二维码" width="360" height="544"><figcaption>二维码有效期至 11 月 8 日前</figcaption></figure><a href="https://github.com/EmbodiedAI-Group/Moss-Embodied-Workshop" target="_blank" rel="noopener noreferrer">在 GitHub 关注社区 ↗</a></div></section>
 </main>
-<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-word">moss</span><span>具身工坊</span></a><p>开放知识 · 共同创造 · 真实世界</p><nav aria-label="页脚导航"><a href="projects.html">共创项目</a><a href="wang-zhi-talk.html">专家分享</a><a href="#join">加入社区</a></nav><small>© 2026 moss具身工坊</small></footer>
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-word">Moss</span><span>具身工坊</span></a><p>开放知识 · 共同创造 · 真实世界</p><nav aria-label="页脚导航"><a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="talk" href="talks.html">专家分享</a><a href="#join">加入社区</a></nav><small>© 2026 Moss具身工坊</small></footer>
 </body>
 </html>

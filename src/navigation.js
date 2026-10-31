@@ -2,11 +2,22 @@
   const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const key = 'moss-navigation';
-  const route = url => new URL(url, location.href).pathname.split('/').pop() || 'index.html';
+  // Keep the complete path: two collections may both contain an index.html.
+  const route = url => {
+    const path = new URL(url, location.href).pathname;
+    return path.endsWith('/') ? path + 'index.html' : path;
+  };
   const current = route(location.href);
-  const detail = page => /^project-[1-4]\.html$/.test(page) || page === 'wang-zhi-talk.html';
-  const order = ['index.html', 'projects.html', 'wang-zhi-talk.html'];
-  const rank = page => /^project-[1-4]\.html$/.test(page) ? 1 : order.indexOf(page);
+  const detail = page => page === current && document.body?.hasAttribute('data-content-detail') || /\/(?:project-[1-4]|wang-zhi-talk)\.html$/.test(page);
+  const rank = page => {
+    const name = page.split('/').pop();
+    if (name === 'index.html') return 0;
+    if (name === 'projects.html' || name.startsWith('project-')) return 1;
+    if (name === 'talks.html' || name.startsWith('talk-') || name === 'wang-zhi-talk.html') return 2;
+    if (name === 'knowledge.html' || name.startsWith('knowledge-')) return 3;
+    if (name === 'updates.html' || name.startsWith('update-')) return 4;
+    return 0;
+  };
   let incoming;
   let transition;
   let shared = [];
@@ -18,9 +29,9 @@
     sessionStorage.removeItem(key);
     return value;
   };
-  const role = anchor => anchor.matches('.gallery-item') ? 'gallery' : anchor.matches('.project-card') ? 'catalog' : anchor.matches('.event-strip') ? 'event' : anchor.matches('.update-row') ? 'update' : anchor.closest('.research-summary') ? 'research' : 'navigation';
+  const role = anchor => anchor.matches('.gallery-item') ? 'gallery' : anchor.matches('.project-card') ? 'catalog' : anchor.matches('.event-strip') ? 'event' : anchor.matches('.update-row') ? 'update' : anchor.closest('.research-summary') ? 'research' : anchor.hasAttribute('data-content-link') ? 'content' : 'navigation';
   const findSource = (item, sourceRole) => {
-    const candidates = [...document.querySelectorAll('.gallery-item, .project-card, .event-strip, .update-row[href], .research-summary .text-action')].filter(anchor => route(anchor.href) === item);
+    const candidates = [...document.querySelectorAll('[data-content-link], .gallery-item, .project-card, .event-strip, .update-row[href], .research-summary .text-action')].filter(anchor => route(anchor.href) === item);
     return candidates.find(anchor => role(anchor) === sourceRole) || candidates[0];
   };
   const opposite = direction => direction.endsWith('forward') ? direction.replace('forward', 'back') : direction.replace('back', 'forward');
@@ -46,11 +57,11 @@
     let title, image;
     if (detail(current)) {
       title = document.querySelector('main h1');
-      image = document.querySelector('.visual img');
+      image = document.querySelector('main [data-transition-image], .visual img');
     } else {
       const anchor = findSource(context.item, context.sourceRole);
       if (!anchor) return;
-      title = context.sourceRole === 'research' ? anchor.closest('.research-summary').querySelector('h3') : anchor.querySelector('h2, h3, .event-research');
+      title = context.sourceRole === 'research' ? anchor.closest('.research-summary').querySelector('h3') : anchor.querySelector('[data-transition-title], h2, h3, .event-research');
       image = anchor.querySelector('img');
     }
     for (const [element, name] of [[title, 'navigation-title'], [image, 'navigation-image']]) {
@@ -92,7 +103,7 @@
     let context = contextFor(current, to);
     if (anchor.closest('.site-header, .site-footer')) {
       context = { from: current, to, direction: rank(to) < rank(current) ? 'section-back' : 'section-forward' };
-    } else if (detail(to) && sourceRole !== 'navigation') {
+    } else if (sourceRole !== 'navigation' && (anchor.hasAttribute('data-content-link') || detail(to))) {
       const selection = { item: to, sourceRole, sourceTop: anchor.getBoundingClientRect().top };
       history.replaceState({ ...history.state, mossSelection: selection }, '');
       sessionStorage.setItem('moss-origin:' + current, JSON.stringify(selection));
@@ -136,7 +147,7 @@
     transition = event.viewTransition;
     if (!transition || reduce.matches) {
       root.dataset.navigationFallback = context.direction;
-      returnTarget(context);
+      if (!reduce.matches) returnTarget(context);
       return;
     }
     delete root.dataset.navigationFallback;
@@ -160,7 +171,7 @@
     restorePosition(context, event.persisted ? 'traverse' : context.navigationType);
     if (!event.persisted) history.replaceState({ ...history.state, mossArrival: context }, '');
     if (event.persisted && !reduce.matches) root.dataset.navigationFallback = context.direction;
-    returnTarget(context);
+    if (!reduce.matches) returnTarget(context);
   });
   document.addEventListener('animationend', event => {
     if (event.animationName.startsWith('navigation-fallback')) delete root.dataset.navigationFallback;

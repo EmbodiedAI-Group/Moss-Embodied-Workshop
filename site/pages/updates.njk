@@ -1,0 +1,8 @@
+---
+layout: base.njk
+title: 社区动态
+bodyClass: page-projects
+sectionKind: update
+permalink: updates.html
+---
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">首页</a> / 社区动态</div><h1>社区动态</h1><p>记录社区正在发生的事。</p></div></section><section class="projects-list"><div class="container"><div class="projects-grid">{% for item in library.updates %}<a class="project-card" data-content-link href="{{ item.url }}">{% if item.image %}<div class="card-visual"><img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy"></div>{% endif %}<div class="card-body"><time datetime="{{ item.date }}">{{ item.date | safeDate }}</time><h2 data-transition-title>{{ item.title }}</h2><p>{{ item.summary }}</p><span class="card-cta">查看详情 ↗</span></div></a>{% endfor %}</div></div></section>
