@@ -132,3 +132,8 @@
 
 /* Research imagery is displayed uncropped so its scientific annotations remain intact. */
 .talk-figure{margin:0 0 44px;padding-bottom:18px;border-bottom:1px solid var(--line)}.talk-figure img{display:block;width:100%;height:auto;background:#fff}.talk-figure figcaption{margin-top:12px;color:var(--muted);font-size:.8rem;line-height:1.6}.talk-figure figcaption a{color:var(--blue);text-underline-offset:3px}@media(max-width:760px){.talk-figure{margin-bottom:30px}}
+
+.page-talk .join-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:32px;align-items:start}
+.page-talk .join-card .join-qr{width:100%;max-width:300px;margin:0}
+.page-talk .join-card .join-qr figcaption{color:var(--muted)}
+@media(max-width:760px){.page-talk .join-card{grid-template-columns:1fr;gap:16px}}

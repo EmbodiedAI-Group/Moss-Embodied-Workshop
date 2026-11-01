@@ -27,7 +27,7 @@ function revealBatch(selector, context, returning, { distance = 20, duration = 0
 export function readingMotion(context, { returning, navigationEntry }) {
   revealBatch('.gallery-item', context, returning, { distance: 24, duration: 0.68 });
   revealBatch('.project-card', context, returning, { distance: 24, duration: 0.68 });
-  revealBatch('.knowledge-rows > a', context, returning);
+  revealBatch('.knowledge-rows > a, .knowledge-rows > article', context, returning);
   revealBatch('.updates-main > .update-row', context, returning);
   revealBatch('.discussion-topics li, .collab-step', context, returning, { distance: 16, duration: 0.58 });
   revealBatch('.agenda li', context, returning, { distance: 12, duration: 0.5 });
