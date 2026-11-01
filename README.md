@@ -19,7 +19,7 @@
 
 Pages CMS 是第三方托管的编辑服务，网站仍为 GitHub Pages 纯静态站点。首次使用需由**组织管理员**在 [Pages CMS](https://app.pagescms.org/) 登录并安装 Pages CMS GitHub App，授权时选择本仓库 `EmbodiedAI-Group/Moss-Embodied-Workshop`；编辑人员也需要相应仓库权限。其后使用 `.pages.yml` 定义的中文表单。安装步骤见 [Pages CMS 官方快速开始](https://pagescms.org/docs/quick-start/)。
 
-仓库管理员还需将 GitHub 仓库的 **Settings → Pages → Build and deployment → Source** 设置为 **GitHub Actions**，使 `.github/workflows/pages.yml` 构建和发布 `_site`。切换完成后，保存内容会触发构建；如果发布失败，可在 GitHub 仓库的 Actions 页查看错误。当前执行账号的仓库权限已检查为 `admin: false`，不能假定可以修改该设置；需要有权限的管理员完成这一步。设置方法见 [GitHub Pages 官方文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+具备该仓库 Maintain（维护）或 Admin（管理员）权限的人还需将 GitHub 仓库的 **Settings → Pages → Build and deployment → Source** 设置为 **GitHub Actions**，使 `.github/workflows/pages.yml` 构建和发布 `_site`。切换完成后，保存内容会触发构建；如果发布失败，可在 GitHub 仓库的 Actions 页查看错误。当前执行账号的仓库权限已检查为 `maintain: false`、`admin: false`，无法修改该设置；需要有相应权限的人完成这一步。设置方法见 [GitHub Pages 官方文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
 首次启用前，仓库根目录的 HTML 是当前版本的生成快照，仅用于现有分支发布方式；它们不是内容维护入口，也不会随 CMS 保存自动更新。旧项目详情、王治分享页面的网址和正文锚点继续保留，已有分享链接无需更换。当前数据迁移与本地构建已进行自动检查；第三方 CMS 的真实登录、授权和表单保存，需在 GitHub App 获授权后使用真实账号完成验证。四类新内容与草稿的生成测试使用本地临时样本，不能代替实际 CMS 操作验证。
 

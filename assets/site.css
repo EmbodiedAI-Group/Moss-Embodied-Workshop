@@ -147,3 +147,7 @@ html.lenis{scroll-behavior:auto}
 
 /* Community QR image keeps the provided quiet zone for reliable scanning. */
 .join-qr{margin:24px 0 0;max-width:300px}.join-qr img{display:block;width:100%;height:auto;background:#fff}.join-qr figcaption{margin-top:10px;color:#e0e7ff;font-size:13px;line-height:1.6}
+
+/* The supplied WeChat screenshot includes an avatar above its code; retain a clear white border around the code. */
+.join-qr-frame.is-original-screenshot{position:relative;width:100%;aspect-ratio:1;overflow:hidden;background:#fff}
+.join-qr-frame.is-original-screenshot img{position:absolute;max-width:none;width:128.571429%;height:auto;left:-14.285714%;top:-62.5%}
