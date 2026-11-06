@@ -151,3 +151,14 @@ html.lenis{scroll-behavior:auto}
 /* The supplied WeChat screenshot includes an avatar above its code; retain a clear white border around the code. */
 .join-qr-frame.is-original-screenshot{position:relative;width:100%;aspect-ratio:1;overflow:hidden;background:#fff}
 .join-qr-frame.is-original-screenshot img{position:absolute;max-width:none;width:128.571429%;height:auto;left:-14.285714%;top:-62.5%}
+
+/* EgoGlass player: native playback, optional repeat, no automatic download. */
+.promo-feature{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);align-items:start;gap:clamp(24px,5vw,80px);border-top:1px solid var(--line)}
+.promo-copy h2{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.25;letter-spacing:-.03em;margin:0 0 20px}
+.promo-copy p{color:var(--muted);max-width:28em;margin:0 0 24px}
+.promo-player video{display:block;width:100%;aspect-ratio:199/85;object-fit:contain;background:#171415}
+.promo-tools{padding-top:12px;font-size:14px;color:var(--ink)}
+.promo-tools label{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
+.promo-tools input{width:18px;height:18px;accent-color:var(--blue)}
+.promo-tools input:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+@media(max-width:760px){.promo-feature{grid-template-columns:1fr;gap:22px}.promo-copy h2{margin-bottom:12px}.promo-copy p{margin-bottom:16px}}

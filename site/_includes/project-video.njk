@@ -1,0 +1,15 @@
+{% set videoTitle = item.videoTitle or ((item.shortTitle or item.title) ~ " · 视频介绍") %}
+<section class="promo-feature section-shell" aria-label="{{ videoTitle }}">
+  <div class="promo-copy">
+    <h2>{{ videoTitle }}</h2>
+    {% if item.videoDescription %}<p>{{ item.videoDescription }}</p>{% endif %}
+{% if videoHome %}    <a href="{{ item.url }}" class="text-action">了解项目 ↗</a>{% endif %}
+  </div>
+  <div class="promo-player">
+    <video controls playsinline preload="none"{% if item.videoPoster %} poster="{{ item.videoPoster }}"{% endif %} aria-label="{{ videoTitle }}">
+      <source src="{{ item.video }}" type="video/mp4">
+      您的浏览器不支持播放视频。<a href="{{ item.video }}">下载视频</a>
+    </video>
+    <div class="promo-tools" hidden><label><input type="checkbox" data-video-loop> 循环播放</label></div>
+  </div>
+</section>

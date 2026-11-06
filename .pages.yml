@@ -3,6 +3,7 @@ media:
   output: /assets/media
   categories:
   - image
+  - video
 settings:
   content:
     merge: true
@@ -56,6 +57,20 @@ content:
     label: 正文
     type: rich-text
     required: true
+  - name: video
+    label: 项目介绍视频（MP4，可选）
+    type: file
+    options:
+      extensions: [mp4]
+  - name: videoTitle
+    label: 视频标题（可选）
+    type: string
+  - name: videoDescription
+    label: 视频简介（可选）
+    type: text
+  - name: videoPoster
+    label: 视频封面（可选）
+    type: image
   - name: homeSummary
     label: 首页一句话简介
     type: text

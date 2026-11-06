@@ -11,12 +11,12 @@ permalink: index.html
   <title>Moss具身工坊 · 把想法，带进真实世界</title>
     <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/site.css?v=content3" />
-  <link rel="stylesheet" href="assets/motion.css?v=content3" />
-<link rel="stylesheet" href="assets/reading-position.css?v=content3" />
-<link rel="stylesheet" href="assets/navigation.css?v=content3" />
-  <script src="assets/navigation.js?v=content3"></script>
-<script defer src="assets/motion.js?v=content3"></script>
+<link rel="stylesheet" href="assets/site.css?v=content4" />
+  <link rel="stylesheet" href="assets/motion.css?v=content4" />
+<link rel="stylesheet" href="assets/reading-position.css?v=content4" />
+<link rel="stylesheet" href="assets/navigation.css?v=content4" />
+  <script src="assets/navigation.js?v=content4"></script>
+<script defer src="assets/motion.js?v=content4"></script>
 </head>
 <body class="page-home" data-content-section="home">
 <a class="skip-link" href="#main">跳至内容</a>
@@ -49,6 +49,7 @@ permalink: index.html
     <div class="section-heading"><h2 id="projects-title">一起，把项目做出来</h2><span class="heading-rule" aria-hidden="true"></span><p>从想法、原型到真实场景，<br />在社区中获得讨论、协作与支持。</p><a href="projects.html" aria-label="浏览全部共创项目"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a></div>
     <div class="project-gallery">{% for item in library.projects | limit(4) %}<a data-content-link href="{{ item.url }}" class="gallery-item"><div class="gallery-image">{% if item.image %}<img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy">{% endif %}</div><h3 data-transition-title>{{ item.shortTitle or item.title }} →</h3><p>{{ item.homeSummary or item.summary }}</p></a>{% endfor %}</div>
   </section>
+{% set item = library.projects | selectattr("video") | first %}{% if item %}{% set videoHome = true %}{% include "project-video.njk" %}{% endif %}
   <section class="research-feature section-shell" id="activities" aria-labelledby="research-title">
     <div class="research-heading"><h2 id="research-title">和做研究的人，<br />聊真正的问题。</h2><p>专家论坛<br />前沿论文、研究方法与真实实验，<br />在这里展开讨论。</p></div>
     {% if talk %}<div class="research-content"><div class="research-author"><h3>{{ talk.speaker }}</h3><p>{% for line in talk.speakerRole | lines %}{{ line }}<br>{% endfor %}</p><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }}<br>{{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time></div><div class="research-summary"><h3 data-transition-title>{{ talk.shortTitle or talk.title }}</h3><p>{{ talk.summary }}</p>{% if talk.awards %}<p class="research-award">{% for award in talk.awards | lines %}{{ award }}<br>{% endfor %}</p>{% endif %}<a data-content-link class="text-action" href="{{ talk.url }}"><span data-transition-title>查看分享与完整大纲</span> ↗</a></div></div>{% endif %}

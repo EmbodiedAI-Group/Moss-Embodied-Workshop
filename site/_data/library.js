@@ -15,7 +15,7 @@ export default function () {
         throw new Error(`${folder}/${name} 缺少嘉宾或分享时间，请在内容管理界面补齐。`);
       }
       const headings = [...(item.body || '').matchAll(/^##\s+(.+)$/gm)].map((match, index) => ({ title: match[1].replace(/[*_`]/g, ''), id: `section-${index + 1}` }));
-      return { ...item, headings, image: (item.image || '').replace(/^\/+/, ''), kind, url: item.legacyUrl || `${kind}-${stem}.html`, id: `${kind}:${stem}` };
+      return { ...item, headings, image: (item.image || '').replace(/^\/+/, ''), video: (item.video || '').replace(/^\/+/, ''), videoPoster: (item.videoPoster || '').replace(/^\/+/, ''), kind, url: item.legacyUrl || `${kind}-${stem}.html`, id: `${kind}:${stem}` };
     }).filter(item => item.published !== false).sort((a, b) => (b.date || '').localeCompare(a.date || '') || (a.legacyOrder || 9999) - (b.legacyOrder || 9999) || a.id.localeCompare(b.id));
   }
   const now = Date.now();

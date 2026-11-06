@@ -141,6 +141,24 @@
       "validityNote": "Image states valid before November 8; year not stated in source image",
       "generatedThisConversion": false,
       "cropped": false
+    },
+    {
+      "path": "assets/media/egoglass-promo.mp4",
+      "source": "User-provided EgoGlass_Video.zip / EgoGlass_Video.mp4",
+      "sourceSha256": "649238d84985ff37c1cb58b0dc113ff80f60a2219e91b9ae13d4f15afa8d07db",
+      "outputSha256": "9429727e938c8a9ccf41129dae01bde39c51958ed1d80b38d9c11b2fd0e348e2",
+      "bytes": 32550848,
+      "conversion": "H.264 CRF 23 yuv420p, AAC 128k, faststart; original 1194x510, 30 fps and 113.708-second duration retained",
+      "generatedThisConversion": false
+    },
+    {
+      "path": "assets/media/egoglass-poster.webp",
+      "source": "User-provided EgoGlass_Video.zip / EgoGlass_Video.mp4",
+      "sourceSha256": "649238d84985ff37c1cb58b0dc113ff80f60a2219e91b9ae13d4f15afa8d07db",
+      "outputSha256": "76bbbd03853d116ec567f329bc5aedeb9bdb50b89b32d88a31dd18f53fd1246c",
+      "bytes": 52444,
+      "conversion": "Frame extracted at 11 seconds and encoded as WebP; no added visual elements",
+      "generatedThisConversion": false
     }
   ],
   "productionAssets": [

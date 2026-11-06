@@ -3,6 +3,7 @@ import Threads from './vendor/react-bits/Threads.jsx';
 import Magnet from './vendor/react-bits/Magnet.jsx';
 import './choreography.js';
 import './reading-position.js';
+import './video-controls.js';
 
 // Native markup remains the navigation fallback before React mounts.
 const joinLink = document.querySelector('#join-magnet > a');
