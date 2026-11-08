@@ -23,6 +23,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Add talk recording to Pages artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download talk-wang-zhi-20261107 --repo "$GITHUB_REPOSITORY" --pattern wang-zhi-humanego-forceband-final.mp4 --dir _site/assets/media
+          echo '9979bad6ca1b30f912d88936eee77549e145a53c18eaee6828468a8ca013f0ac  _site/assets/media/wang-zhi-humanego-forceband-final.mp4' | sha256sum --check
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
