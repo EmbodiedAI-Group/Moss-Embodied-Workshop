@@ -137,6 +137,15 @@ content:
   - *id006
   - *id007
   - *id008
+  - name: video
+    label: 分享回放 MP4 链接（选填）
+    type: string
+  - name: videoTitle
+    label: 回放标题（选填）
+    type: string
+  - name: videoPoster
+    label: 回放封面（选填）
+    type: image
   - name: speaker
     label: 分享嘉宾
     type: string
