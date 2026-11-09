@@ -11,7 +11,7 @@ permalink: index.html
   <title>Moss具身工坊 · 把想法，带进真实世界</title>
     <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/site.css?v=content5" />
+<link rel="stylesheet" href="assets/site.css?v=content6" />
   <link rel="stylesheet" href="assets/motion.css?v=content4" />
 <link rel="stylesheet" href="assets/reading-position.css?v=content4" />
 <link rel="stylesheet" href="assets/navigation.css?v=content4" />
@@ -44,7 +44,7 @@ permalink: index.html
       <div class="hero-note"><p>从桌面原型<br />到真实世界的<br />具身智能。</p><p>在这里，<br />想法不停留<br />在论文里。</p><span lang="en">IDEAS<br />TO REAL WORLD</span></div>
     </div>
   </section>
-  {% set talk = library.talks[0] %}{% if talk %}<a data-content-link class="event-strip" href="{{ talk.url }}"><strong>最新分享</strong><span>{{ talk.speaker }}</span><span data-transition-title class="event-research">{{ talk.shortTitle or talk.title }}</span><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }} · {{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time><span class="event-action">查看详情 ↗</span></a>{% endif %}
+  {% set talk = library.talks[0] %}{% if talk %}<a data-content-link class="event-strip" href="{{ talk.url }}"><strong>{% if talk.eventEnded %}直播回顾{% else %}最新分享{% endif %}</strong><span>{{ talk.speaker }}</span><span data-transition-title class="event-research">{{ talk.shortTitle or talk.title }}</span><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }} · {{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time><span class="event-action">{% if talk.eventEnded %}阅读回顾{% else %}查看详情{% endif %} ↗</span></a>{% endif %}
   <section class="home-projects section-shell" id="projects" aria-labelledby="projects-title">
     <div class="section-heading"><h2 id="projects-title">一起，把项目做出来</h2><span class="heading-rule" aria-hidden="true"></span><p>从想法、原型到真实场景，<br />在社区中获得讨论、协作与支持。</p><a href="projects.html" aria-label="浏览全部共创项目"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a></div>
     <div class="project-gallery">{% for item in library.projects | limit(4) %}<a data-content-link href="{{ item.url }}" class="gallery-item"><div class="gallery-image">{% if item.image %}<img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy">{% endif %}</div><h3 data-transition-title>{{ item.shortTitle or item.title }} →</h3><p>{{ item.homeSummary or item.summary }}</p></a>{% endfor %}</div>
@@ -52,7 +52,7 @@ permalink: index.html
 {% set item = library.projects | selectattr("video") | first %}{% if item %}{% set videoHome = true %}{% include "project-video.njk" %}{% endif %}
   <section class="research-feature section-shell" id="activities" aria-labelledby="research-title">
     <div class="research-heading"><h2 id="research-title">和做研究的人，<br />聊真正的问题。</h2><p>专家论坛<br />前沿论文、研究方法与真实实验，<br />在这里展开讨论。</p></div>
-    {% if talk %}<div class="research-content"><div class="research-author"><h3>{{ talk.speaker }}</h3><p>{% for line in talk.speakerRole | lines %}{{ line }}<br>{% endfor %}</p><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }}<br>{{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time></div><div class="research-summary"><h3 data-transition-title>{{ talk.shortTitle or talk.title }}</h3><p>{{ talk.summary }}</p>{% if talk.awards %}<p class="research-award">{% for award in talk.awards | lines %}{{ award }}<br>{% endfor %}</p>{% endif %}<a data-content-link class="text-action" href="{{ talk.url }}"><span data-transition-title>查看分享与完整大纲</span> ↗</a></div></div>{% endif %}
+    {% if talk %}<div class="research-content"><div class="research-author"><h3>{{ talk.speaker }}</h3><p>{% for line in talk.speakerRole | lines %}{{ line }}<br>{% endfor %}</p><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }}<br>{{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time></div><div class="research-summary"><h3 data-transition-title>{{ talk.shortTitle or talk.title }}</h3><p>{{ talk.summary }}</p>{% if talk.awards %}<p class="research-award">{% for award in talk.awards | lines %}{{ award }}<br>{% endfor %}</p>{% endif %}<a data-content-link class="text-action" href="{{ talk.url }}"><span data-transition-title>{% if talk.eventEnded %}阅读直播回顾{% else %}查看分享与完整大纲{% endif %}</span> ↗</a></div></div>{% endif %}
   </section>
   <section class="knowledge-section section-shell" id="knowledge" aria-labelledby="knowledge-title">
     <div class="section-heading"><h2 id="knowledge-title">知识，在交流中生长</h2><span class="heading-rule" aria-hidden="true"></span><p>技术文章、实战教程与前沿论文解读。<br />让每一次讨论，都成为下一次实践的起点。</p></div>

@@ -159,6 +159,24 @@
       "bytes": 52444,
       "conversion": "Frame extracted at 11 seconds and encoded as WebP; no added visual elements",
       "generatedThisConversion": false
+    },
+    {
+      "path": "assets/media/egoglass-video7.mp4",
+      "source": "User-provided EgoGlass_Video7.zip / EgoGlass_Video7.mp4",
+      "sourceSha256": "4c3261457b4f60204a21a1db27022a80a6595a4edd224a76b924ad3efebb436c",
+      "outputSha256": "f101902f20b110b25e8c0de73830af86eb38667b436f4e642d899910a5d805fc",
+      "bytes": 51700514,
+      "conversion": "H.264 CRF 23 yuv420p, AAC audio copied, faststart; 1280x720, approximately 60.064 fps, 66.618 seconds",
+      "generatedThisConversion": true
+    },
+    {
+      "path": "assets/media/egoglass-video7-poster.webp",
+      "source": "User-provided EgoGlass_Video7.zip / EgoGlass_Video7.mp4",
+      "sourceSha256": "4c3261457b4f60204a21a1db27022a80a6595a4edd224a76b924ad3efebb436c",
+      "outputSha256": "868c6b58898b651e74ccf9288c22ac592e1b356b062fb59c3be5b6324d59938e",
+      "bytes": 44888,
+      "conversion": "Frame extracted at 4 seconds and encoded as WebP; no added visual elements",
+      "generatedThisConversion": true
     }
   ],
   "productionAssets": [

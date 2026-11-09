@@ -1,14 +1,11 @@
 {
-  "title": "王治博士学术分享HumanEgo和ForceBand",
-  "shortTitle": "王治博士学术分享HumanEgo和ForceBand",
-  "summary": "用几分钟人类第一视角视频，零样本教会机器人操作。从人类视频与表面肌电（sEMG）出发，讨论机器人学习的数据瓶颈与本体差异。",
+  "title": "直播回顾｜王治：从人类视频到机器人操作",
+  "shortTitle": "王治：从人类视频到机器人操作",
+  "summary": "从第一视角视频中的空间关系，到肌电信号中的用力信息，回顾 HumanEgo 与 ForceBand 如何利用人类数据学习机器人操作。",
   "date": "",
   "published": true,
   "legacyUrl": "wang-zhi-talk.html",
   "legacyOrder": 1,
-  "video": "assets/media/wang-zhi-humanego-forceband-final.mp4",
-  "videoTitle": "分享回放：HumanEgo 与 ForceBand",
-  "videoPoster": "assets/media/humanego-teaser.webp",
   "speaker": "王治 · Leo Wang",
   "speakerRole": "UMD 计算机科学系博士生\nAmazon FAR 研究实习生",
   "eventDate": "2026-11-07",
@@ -17,10 +14,10 @@
   "timeZone": "北京时间（UTC+8）",
   "englishTitle": "Zero-Shot Robot Learning from Minutes of Human Egocentric Videos",
   "awards": "IROS 2026 WORLDS Workshop 最佳论文奖\nScaleInfra Workshop 最佳 Demo 论文奖",
-  "secondaryTitle": "同时分享 ForceBand Learning Forceful Manipulation with sEMG · CoRL 2026",
+  "secondaryTitle": "HumanEgo 与 ForceBand：从第一视角视频到肌电信号",
   "bio": "美国马里兰大学帕克分校（UMD）计算机科学系博士生，师从 **Yiannis Aloimonos** 教授；本科毕业于清华大学电子工程系。现为 **Amazon FAR（Frontier AI & Robotics）**研究实习生，与 Guanya Shi、Carlo Sferrazza、Rocky Duan、Pieter Abbeel 等合作。曾在 UIUC、微软亚洲研究院、清华大学交叉信息研究院从事研究。\n\n**研究方向：**从人类数据中高效学习机器人操作，利用人类视频、触觉等多模态信息，让机器人学会精细、通用的操作技能。",
-  "body": "## 从人类示范，到机器人技能\n\n数据是机器人学习的核心瓶颈：遥操作采集昂贵、缓慢，而且绑定特定硬件。人类第一视角视频天然包含丰富的操作示范，几乎零成本，随时随地都能采集。但人和机器人在外观与运动学上存在**“本体差异”（embodiment gap）**，技能很难直接迁移。\n\n本次分享介绍 **HumanEgo**：一个不需要任何机器人数据、与硬件无关、数据高效的机器人学习框架。\n\n### 如何跨越本体差异？\n\n戴着 Aria 眼镜录制日常操作视频，把每段示范提升为以**“手–物交互”为中心的实体级表征（Interaction-Centric Tokens）**，用手臂 inpainting 和视觉关键点弥合视觉差异，再用带稠密辅助目标的 **flow matching 策略**，从每条轨迹中提取更多监督信号。\n\n每个任务只用 **30 分钟**人类视频，HumanEgo 在四个真实任务上的平均成功率达到 **92.5%**（15 分钟数据即达 75%），比同等时长的遥操作数据高出 **41%**，并能零样本迁移到新的机器人、相机和环境。\n\n[查看 HumanEgo 项目与实验结果](https://humanego-ai.github.io/)\n\n## 分享中的几点洞见\n\n**人类视频不只是廉价替代品。**丰富的示范不仅能够降低采集成本，也为策略学习提供了更充分的监督信号。\n\n**显式空间表征比视觉逼真度更关键。**跨越本体差异的关键，在于理解手和物体如何交互。\n\n## ForceBand：从 sEMG 学习用力操作\n\n**ForceBand: Learning Forceful Manipulation with sEMG**  \nCoRL 2026\n\n本次分享还将介绍 ForceBand，延伸讨论如何利用表面肌电（sEMG）信息学习机器人操作。\n\n[查看 ForceBand 项目主页](https://forceband-emg.github.io/)",
-  "agenda": "1. **为什么是人类第一视角视频**机器人数据瓶颈与本体差异\n2. **HumanEgo 方法**数据采集与预处理、交互中心表征、flow matching 策略与稠密辅助目标\n3. **实验结果**数据效率、与遥操作的对比、跨机器人 / 相机 / 环境的零样本泛化\n4. **几点洞见**人类视频的价值，以及显式空间表征如何跨越本体差异\n5. **CoRL 2026 · ForceBand**Learning Forceful Manipulation with sEMG\n6. **Q&A**交流与讨论",
+  "body": "## 从人类示范，到机器人技能\n\n*本文根据 Moss 具身工坊王治直播分享的文字转写整理，内容经过编辑，非逐字记录。*\n\n机器人要学会操作，通常需要大量与具体机器人有关的数据。王治在分享中提出，人每天都在自然地使用双手完成任务，第一视角视频和身体信号能否成为机器人学习的来源？他以 HumanEgo 和 ForceBand 两项研究，分别讨论动作与用力信息的获取。\n\n难点不只是收集视频。人的头会移动，手与机器人夹爪的形态也不同；同一操作在人和机器人画面中看起来很不一样。要从人的演示中学习，首先需要把这些差异转化成机器人可以使用的表示。\n\n## HumanEgo：用空间关系连接人和机器人\n\nHumanEgo 从头戴设备采集第一视角演示，借助 SLAM 将头部运动与手部运动分开，并把人手的运动映射到机器人夹爪轨迹。为缩小视觉差异，研究者还在画面中移除人手和手臂，再绘制关键点，使训练时与部署时的输入更接近。\n\n分享中的核心是**以交互为中心的表征**（Interaction-Centric Tokens，ICT）：把手和物体看作场景中的实体，记录实体类型、自身状态，以及左右手相对于各实体的空间关系与抓取状态。这样，策略可以利用手与物体如何接近、接触和移动的信息，而不必仅从像素中自行推断全部三维关系。研究还使用 flow matching 策略，并通过预测物体运动、二维轨迹和未来交互状态等辅助任务，提高演示数据的利用效率。\n\n在分享介绍的实验中，每个任务使用约 **30 分钟人类演示**，HumanEgo 在抓取、叠杯、转把手和浇花四项真实任务上的平均成功率为 **92.5%**；同一比较中的最优基线为 **51.2%**。这些数字对应论文中的特定任务、设备与实验设置，不能直接推断所有场景下人类数据都优于机器人数据。\n\n交流中也提到，这条路线依赖 SLAM、手部和物体跟踪等预处理环节；遮挡、光照以及跟踪误差都会影响后续可用的动作信息。如何让采集与跟踪在更多日常场景中稳定工作，仍是实际应用需要解决的问题。\n\n[查看 HumanEgo 项目与实验结果](https://humanego-ai.github.io/)\n\n## ForceBand：从肌电信号预测用力\n\n视频能记录动作，却不容易直接看出手指施加了多大的力。ForceBand 将表面肌电（sEMG）作为补充：研究者使用佩戴在前臂的多通道肌电设备，结合惯性测量信息，学习预测五指指尖的用力。训练时，指尖力传感器提供用于监督的力数据。\n\n分享中介绍，研究团队采集了约 **10 小时**肌电数据，并将预测的力信息接入操作策略，展示搬运、挤压等需要控制用力的任务。这里的肌电反映肌肉活动，系统据此**预测力**，并不是直接测量触觉；它与视觉提供的是互补信息。\n\n这项工作仍处于早期阶段。王治提到，系统面向新使用者时约需 **15 分钟校准**；硬件、算法和跨人的适应能力仍有改进空间。两项研究共同指向一个问题：除了让机器人看见人如何行动，还能否让它理解人与物体交互时的空间关系和用力方式？\n\n[查看 ForceBand 项目主页](https://forceband-emg.github.io/)",
+  "agenda": "1. [从人类示范，到机器人技能](#intro-title)\n2. [HumanEgo：用空间关系连接人和机器人](#insights-title)\n3. [ForceBand：从肌电信号预测用力](#forceband-title)",
   "image": "assets/media/humanego-teaser.webp",
   "imageAlt": "HumanEgo 人类第一视角视频到机器人操作的研究框架与实验",
   "imageCredit": "HumanEgo 项目主页",
@@ -34,5 +31,8 @@
       "label": "ForceBand 项目主页",
       "url": "https://forceband-emg.github.io/"
     }
-  ]
+  ],
+  "video": "assets/media/wang-zhi-humanego-forceband-final.mp4",
+  "videoTitle": "分享回放：HumanEgo 与 ForceBand",
+  "videoPoster": "assets/media/humanego-teaser.webp"
 }

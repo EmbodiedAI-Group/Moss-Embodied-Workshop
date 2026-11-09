@@ -157,6 +157,7 @@ html.lenis{scroll-behavior:auto}
 .promo-copy h2{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.25;letter-spacing:-.03em;margin:0 0 20px}
 .promo-copy p{color:var(--muted);max-width:28em;margin:0 0 24px}
 .promo-player video{display:block;width:100%;aspect-ratio:199/85;object-fit:contain;background:#171415}
+.promo-player video.is-16-9{aspect-ratio:16/9}
 .promo-tools{padding-top:12px;font-size:14px;color:var(--ink)}
 .promo-tools label{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
 .promo-tools input{width:18px;height:18px;accent-color:var(--blue)}

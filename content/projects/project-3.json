@@ -39,8 +39,9 @@
     "#Isaac Sim"
   ],
   "joinText": "通过社区了解项目加入方式，备注「EGO 众包」，提交你的技能想法，加入采集志愿者队伍。",
-  "video": "assets/media/egoglass-promo.mp4",
-  "videoPoster": "assets/media/egoglass-poster.webp",
+  "video": "assets/media/egoglass-video7.mp4",
+  "videoPoster": "assets/media/egoglass-video7-poster.webp",
   "videoTitle": "EgoGlass 眼镜宣传片",
-  "videoDescription": "从第一视角出发，探索真实世界里的数据采集。"
+  "videoDescription": "从第一视角出发，探索真实世界里的数据采集。",
+  "videoAspectRatio": "16/9"
 }

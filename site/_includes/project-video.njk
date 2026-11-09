@@ -6,7 +6,7 @@
 {% if videoHome %}    <a href="{{ item.url }}" class="text-action">了解项目 ↗</a>{% endif %}
   </div>
   <div class="promo-player">
-    <video controls playsinline preload="none"{% if item.videoPoster %} poster="{{ item.videoPoster }}"{% endif %} aria-label="{{ videoTitle }}">
+    <video{% if item.videoAspectRatio == "16/9" %} class="is-16-9"{% endif %} controls playsinline preload="none"{% if item.videoPoster %} poster="{{ item.videoPoster }}"{% endif %} aria-label="{{ videoTitle }}">
       <source src="{{ item.video }}" type="video/mp4">
       您的浏览器不支持播放视频。<a href="{{ item.video }}">下载视频</a>
     </video>
