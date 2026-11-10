@@ -11,7 +11,7 @@ permalink: index.html
   <title>Moss具身工坊 · 把想法，带进真实世界</title>
     <link rel="preload" href="assets/fonts/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/noto-sans-sc-variable.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/site.css?v=content6" />
+<link rel="stylesheet" href="assets/site.css?v=series1" />
   <link rel="stylesheet" href="assets/motion.css?v=content4" />
 <link rel="stylesheet" href="assets/reading-position.css?v=content4" />
 <link rel="stylesheet" href="assets/navigation.css?v=content4" />
@@ -23,7 +23,7 @@ permalink: index.html
 <header class="site-header">
   <a class="brand" href="index.html" aria-label="Moss具身工坊首页"><span class="brand-word">Moss</span><span>具身工坊</span></a>
   <nav aria-label="主导航">
-    <a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="talk" href="talks.html">专家分享</a>
+    <a data-nav-kind="project" href="projects.html">共创项目</a><a data-nav-kind="knowledge" href="knowledge.html">知识分享</a><a data-nav-kind="talk" href="talks.html">专家分享</a>
     <span id="join-magnet"><a class="join-link" href="#join">加入社区 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></span>
   </nav>
 <span class="section-context" aria-hidden="true"></span><div class="reading-progress" aria-hidden="true"></div></header>
@@ -55,8 +55,8 @@ permalink: index.html
     {% if talk %}<div class="research-content"><div class="research-author"><h3>{{ talk.speaker }}</h3><p>{% for line in talk.speakerRole | lines %}{{ line }}<br>{% endfor %}</p><time datetime="{{ talk.eventDate }}T{{ talk.eventStart }}:00+08:00">{{ talk.eventDate }}<br>{{ talk.eventStart }}–{{ talk.eventEnd }} 北京时间</time></div><div class="research-summary"><h3 data-transition-title>{{ talk.shortTitle or talk.title }}</h3><p>{{ talk.summary }}</p>{% if talk.awards %}<p class="research-award">{% for award in talk.awards | lines %}{{ award }}<br>{% endfor %}</p>{% endif %}<a data-content-link class="text-action" href="{{ talk.url }}"><span data-transition-title>{% if talk.eventEnded %}阅读直播回顾{% else %}查看分享与完整大纲{% endif %}</span> ↗</a></div></div>{% endif %}
   </section>
   <section class="knowledge-section section-shell" id="knowledge" aria-labelledby="knowledge-title">
-    <div class="section-heading"><h2 id="knowledge-title">知识，在交流中生长</h2><span class="heading-rule" aria-hidden="true"></span><p>技术文章、实战教程与前沿论文解读。<br />让每一次讨论，都成为下一次实践的起点。</p></div>
-    <div class="knowledge-rows">{% for item in library.knowledge | limit(3) %}{% set clickable = item.externalUrl or ((item.body or "") | trim) != ((item.summary or "") | trim) %}{% if clickable %}<a data-content-link href="{{ item.externalUrl or item.url }}">{% else %}<article>{% endif %}<h3 data-transition-title>{{ item.title }}</h3><p>{{ item.summary }}</p>{% if clickable %}<span>查看详情 ↗</span></a>{% else %}</article>{% endif %}{% endfor %}</div><a class="text-action" href="knowledge.html">查看全部知识分享 ↗</a>
+    <div class="section-heading"><h2 id="knowledge-title">知识，在交流中生长</h2><span class="heading-rule" aria-hidden="true"></span><p>每周一个问题，从基础概念读到开源实践。<br />把感知、数据、策略与控制连起来。</p></div>
+    <div class="knowledge-rows">{% for item in library.knowledge | limit(3) %}{% set clickable = item.externalUrl or ((item.body or "") | trim) != ((item.summary or "") | trim) %}{% if clickable %}<a data-content-link href="{{ item.externalUrl or item.url }}">{% else %}<article>{% endif %}<h3 data-transition-title>{{ item.shortTitle or item.title }}</h3><p>{{ item.summary }}</p>{% if clickable %}<span>查看详情 ↗</span></a>{% else %}</article>{% endif %}{% endfor %}</div><a class="text-action" href="knowledge.html">查看全部知识分享 ↗</a>
   </section>
   <section class="community-updates section-shell" id="updates" aria-labelledby="updates-title"><div class="updates-main"><h2 id="updates-title">社区正在发生</h2>{% for item in library.updates | limit(3) %}{% set clickable = item.relatedUrl or ((item.body or "") | trim) != ((item.summary or "") | trim) %}{% if clickable %}<a data-content-link class="update-row" href="{{ item.relatedUrl or item.url }}">{% else %}<article class="update-row">{% endif %}<time datetime="{{ item.date }}">{{ item.date | safeDate }}</time><div><h3 data-transition-title>{{ item.title }}</h3><p>{{ item.summary }}</p></div>{% if clickable %}<span>↗</span></a>{% else %}</article>{% endif %}{% endfor %}<a class="text-action" href="updates.html">查看全部动态 ↗</a></div><aside class="discussion-topics"><h3>我们在讨论什么</h3><ul><li>模仿学习、强化学习、VLA、世界模型与 RSI，哪条路线更可能走向未来？</li><li>大模型厂商下场具身智能，具身大脑公司如何应对？</li><li>仿真、真机、Ego、UMI 数据，如何使用更高效？</li><li>PI 的 API 实操与 demo 分享。</li><li>具身智能落地的难点，以及可行的解决方式。</li></ul></aside></section>
   <section class="community-join" id="join" aria-labelledby="join-title"><div id="community-threads" aria-hidden="true"></div><div class="join-copy"><h2 id="join-title">下一件真实的事，<br />一起做。</h2><p>和具身智能开发者、研究者与爱好者一起，<br />交流技术、分享资源、组队共创。</p></div><div class="join-contact"><h3>加入 Moss具身工坊</h3><p>微信扫码加入社区，与伙伴交流共创。</p><figure class="join-qr"><div class="join-qr-frame{% if library.site.qrImage == 'assets/media/moss-wechat-qr.png' %} is-original-screenshot{% endif %}"><img src="{{ library.site.qrImage }}" alt="Moss具身工坊微信群二维码" width="360" height="544"></div><figcaption>{{ library.site.qrExpiry }}</figcaption></figure><a href="https://github.com/EmbodiedAI-Group/Moss-Embodied-Workshop" target="_blank" rel="noopener noreferrer">在 GitHub 关注社区 ↗</a></div></section>

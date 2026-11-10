@@ -1,0 +1,76 @@
+{
+  "title": "具身智能，从基础到实践",
+  "description": "每周一个问题，把基础概念、研究方法与开源实践连起来。面向有理工背景的学生、工程师与机器人研究者。",
+  "stages": [
+    {
+      "title": "建立基础地图",
+      "description": "从闭环出发，理解机器人怎样描述世界、组织运动。",
+      "topics": "具身智能基础 · 坐标系与动作 · 规划与控制"
+    },
+    {
+      "title": "读懂数据与示范",
+      "description": "看清一次任务怎样成为数据，以及观测与动作怎样对应。",
+      "topics": "数据形态 · 时间同步与标定 · 数据质量"
+    },
+    {
+      "title": "理解学习方法",
+      "description": "顺着输入、输出与训练过程，读懂策略如何产生动作。",
+      "topics": "模仿学习与 ACT · Diffusion Policy · VLA"
+    },
+    {
+      "title": "走向系统实践",
+      "description": "用开源实现连接概念与代码，讨论接触、评估与失败恢复。",
+      "topics": "力与触觉 · 开源实践 · 系统评估"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Robotic Manipulation",
+      "author": "MIT · Russ Tedrake",
+      "description": "感知、几何、运动规划与控制的系统教材。适合查概念、读推导和做练习。",
+      "url": "https://manipulation.csail.mit.edu/",
+      "repo": "https://github.com/RussTedrake/manipulation",
+      "label": "读教材"
+    },
+    {
+      "title": "Hugging Face Robotics Course",
+      "author": "Hugging Face",
+      "description": "连接经典机器人学与机器人学习的入门课程，可从已发布的基础单元开始。",
+      "url": "https://huggingface.co/learn/robotics-course/unit0/1",
+      "repo": "https://github.com/huggingface/robotics-course",
+      "label": "读课程"
+    },
+    {
+      "title": "LeRobot",
+      "author": "Hugging Face",
+      "description": "从机器人数据集到策略训练与执行的代码入口。适合把方法拆到具体实现。",
+      "url": "https://huggingface.co/docs/lerobot/index",
+      "repo": "https://github.com/huggingface/lerobot",
+      "label": "读文档"
+    },
+    {
+      "title": "MoveIt",
+      "author": "MoveIt 社区",
+      "description": "从运动规划、运动学和碰撞检查入手，理解目标轨迹怎样生成。",
+      "url": "https://moveit.picknik.ai/main/doc/concepts/motion_planning.html",
+      "repo": "https://github.com/moveit/moveit2_tutorials",
+      "label": "读文档"
+    },
+    {
+      "title": "ACT",
+      "author": "Tony Zhao 等 · RSS 2023",
+      "description": "通过动作分块理解模仿学习：输入观测，预测一段关节位置目标。",
+      "url": "https://tonyzhaozh.github.io/aloha/",
+      "repo": "https://github.com/tonyzhaozh/act",
+      "label": "读研究"
+    },
+    {
+      "title": "Diffusion Policy",
+      "author": "Cheng Chi 等 · RSS 2023 / IJRR 2024",
+      "description": "通过动作序列与滚动时域执行，理解生成式策略怎样驱动机器人。",
+      "url": "https://diffusion-policy.cs.columbia.edu/",
+      "repo": "https://github.com/real-stanford/diffusion_policy",
+      "label": "读研究"
+    }
+  ]
+}

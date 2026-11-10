@@ -118,6 +118,18 @@ content:
   - name: externalUrl
     label: 相关外部链接
     type: string
+  - name: series
+    label: 系列名称（专栏文章填写）
+    type: string
+  - name: episode
+    label: 系列篇号
+    type: number
+  - name: author
+    label: 作者
+    type: string
+  - name: readingMinutes
+    label: 预计阅读分钟
+    type: number
 - name: talks
   label: 专家分享
   type: collection
@@ -235,3 +247,53 @@ content:
     label: 有效期提示
     type: string
     required: true
+
+- name: knowledgeGuide
+  label: 知识分享导读
+  type: file
+  path: content/knowledge-guide.json
+  format: json
+  fields:
+  - name: title
+    label: 系列标题
+    type: string
+  - name: description
+    label: 系列介绍
+    type: text
+  - name: stages
+    label: 学习路线
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: 阶段标题
+      type: string
+    - name: description
+      label: 阶段介绍
+      type: text
+    - name: topics
+      label: 主题
+      type: string
+  - name: resources
+    label: 开源书架
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: 资料名称
+      type: string
+    - name: author
+      label: 作者或团队
+      type: string
+    - name: description
+      label: 阅读用途
+      type: text
+    - name: url
+      label: 文档或项目链接
+      type: string
+    - name: repo
+      label: GitHub 仓库链接
+      type: string
+    - name: label
+      label: 链接文字
+      type: string
