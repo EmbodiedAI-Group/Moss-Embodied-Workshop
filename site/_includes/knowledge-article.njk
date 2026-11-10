@@ -1,0 +1,13 @@
+<header class="page-hero knowledge-article-hero"><div class="container">
+  <div class="breadcrumb"><a href="index.html">首页</a> / <a href="knowledge.html">知识分享</a> / 第 {{ item.episode }} 篇</div>
+  <h1>{{ item.title }}</h1>
+  <p class="knowledge-article-deck">{{ item.summary }}</p>
+  <p class="knowledge-meta">{{ item.author }} <span aria-hidden="true">·</span> <time datetime="{{ item.date }}">{{ item.date | safeDate }}</time> <span aria-hidden="true">·</span> 约 {{ item.readingMinutes }} 分钟</p>
+</div></header>
+<div class="container knowledge-reading-layout">
+  <aside class="knowledge-contents"><nav aria-label="本文目录"><h2>本文目录</h2><ol>{% for heading in item.headings %}<li><a href="#{{ heading.id }}">{{ heading.title }}</a></li>{% endfor %}</ol><a class="contents-return" href="knowledge.html#learning-path">查看学习路线</a></nav></aside>
+  <details class="knowledge-mobile-contents"><summary>本文目录 · {{ item.headings.length }} 个章节</summary><nav aria-label="手机阅读目录"><ol>{% for heading in item.headings %}<li><a href="#{{ heading.id }}">{{ heading.title }}</a></li>{% endfor %}</ol></nav></details>
+  <article class="knowledge-prose" aria-label="文章正文">{{ item.body | markdown('knowledge') | safe }}
+    <footer class="article-end"><p>{{ item.series }} · 第 {{ item.episode }} 篇</p><a class="text-action" href="knowledge.html">返回知识分享 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></footer>
+  </article>
+</div>

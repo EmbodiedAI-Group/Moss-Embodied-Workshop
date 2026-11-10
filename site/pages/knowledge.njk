@@ -1,8 +1,41 @@
 ---
 layout: base.njk
 title: 知识分享
-bodyClass: page-projects
+description: 具身智能，从基础到实践。每周一个问题，连接机器人基础、学习方法与开源资源。
+bodyClass: page-knowledge
 sectionKind: knowledge
 permalink: knowledge.html
 ---
-<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">首页</a> / 知识分享</div><h1>知识分享</h1><p>技术文章、实战教程与前沿论文解读。</p></div></section><section class="projects-list"><div class="container"><div class="projects-grid">{% for item in library.knowledge %}{% set clickable = item.externalUrl or ((item.body or "") | trim) != ((item.summary or "") | trim) %}{% if clickable %}<a class="project-card" data-content-link href="{{ item.externalUrl or item.url }}">{% else %}<article class="project-card">{% endif %}{% if item.image %}<div class="card-visual"><img src="{{ item.image }}" alt="{{ item.imageAlt or item.title }}" loading="lazy"></div>{% endif %}<div class="card-body"><h2 data-transition-title>{{ item.title }}</h2><p>{{ item.summary }}</p>{% if clickable %}<span class="card-cta">查看详情 ↗</span>{% endif %}</div>{% if clickable %}</a>{% else %}</article>{% endif %}{% endfor %}</div></div></section>
+<section class="page-hero knowledge-hero"><div class="container">
+  <div class="breadcrumb"><a href="index.html">首页</a> / 知识分享</div>
+  <h1>{{ knowledge.title }}</h1><p>{{ knowledge.description }}</p>
+  <nav class="knowledge-jumps" aria-label="知识分享页内导航"><a href="#articles">阅读文章</a><a href="#learning-path">学习路线</a><a href="#open-resources">开源书架</a></nav>
+</div></section>
+<div class="container knowledge-body">
+  <section id="articles" aria-labelledby="articles-title">
+    <div class="knowledge-section-heading"><h2 id="articles-title">从这一篇开始</h2><span>每周知识分享</span></div>
+    {% for item in library.knowledgeArticles %}<article class="knowledge-feature">
+      <div class="knowledge-feature-main">
+        <h3><a data-content-link href="{{ item.url }}"><span data-transition-title>{{ item.title }}</span></a></h3>
+        <p class="knowledge-meta">第 {{ item.episode }} 篇 <span aria-hidden="true">·</span> <time datetime="{{ item.date }}">{{ item.date | safeDate }}</time> <span aria-hidden="true">·</span> 约 {{ item.readingMinutes }} 分钟</p>
+        <p class="knowledge-feature-summary">{{ item.summary }}</p>
+        <a class="text-action" data-content-link href="{{ item.url }}">阅读第 {{ item.episode }} 篇 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      </div>
+      <div class="knowledge-feature-outline"><p>这篇文章会讲什么</p><ol>{% for heading in item.headings | limit(4) %}<li><a href="{{ item.url }}#{{ heading.id }}">{{ heading.title }}</a></li>{% endfor %}</ol></div>
+    </article>{% endfor %}
+  </section>
+  <section id="learning-path" class="knowledge-section" aria-labelledby="path-title">
+    <div class="knowledge-section-heading"><h2 id="path-title">一条连续的学习路线</h2></div>
+    <p class="knowledge-section-intro">先建立共同语言，再读懂数据和模型，最后回到实际系统。下面是专栏将依次展开的四个方向。</p>
+    <ol class="learning-path">{% for stage in knowledge.stages %}<li><h3>{{ stage.title }}</h3><p>{{ stage.description }}</p><p class="path-topics">{{ stage.topics }}</p></li>{% endfor %}</ol>
+  </section>
+  <section id="open-resources" class="knowledge-section" aria-labelledby="resources-title">
+    <div class="knowledge-section-heading"><h2 id="resources-title">开源书架</h2><span>教材 · 课程 · 实现</span></div>
+    <p class="knowledge-section-intro">跟着问题选资料：用教材理解原理，用作者论文确认方法，用代码看清接口。每篇文章会指向具体章节与实现。</p>
+    <div class="resource-list">{% for resource in knowledge.resources %}<article class="resource-row"><div><h3>{{ resource.title }}</h3><p class="resource-author">{{ resource.author }}</p></div><p>{{ resource.description }}</p><div class="resource-actions"><a href="{{ resource.url }}">{{ resource.label }}<span class="sr-only">：{{ resource.title }}</span></a><a href="{{ resource.repo }}">GitHub<span class="sr-only">：{{ resource.title }}</span></a></div></article>{% endfor %}</div>
+  </section>
+  <section class="knowledge-section" aria-labelledby="community-resources-title">
+    <div class="knowledge-section-heading"><h2 id="community-resources-title">研究与社区</h2><a href="talks.html">专家分享回放</a></div>
+    <div class="community-resources">{% for item in library.knowledgeResources %}<article><h3><a data-content-link href="{{ item.externalUrl or item.url }}">{{ item.title }}</a></h3><p>{{ item.summary }}</p></article>{% endfor %}</div>
+  </section>
+</div>
